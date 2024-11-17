@@ -1,10 +1,22 @@
 import Head from "next/head";
-import { FaTelegram } from "react-icons/fa";
+import Header from "./components/header/header";
+import Services from "./components/services/services";
 
 export default function Home() {
   return (
     <>
       <Head>
+        <title>Akbar Soft</title>
+        <meta name="description" content="Freelance Company For Your Business" />
+      </Head>
+      <Header />
+      <Services />
+    </>
+  );
+};
+
+/*
+  <Head>
         <title>Akbar Soft</title>
         <meta name="description" content="Freelance Company For Your Business" />
       </Head>
@@ -19,6 +31,4 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
-  );
-};
+*/

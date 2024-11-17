@@ -1,4 +1,7 @@
 import './styles/styles.css'
+import './styles/header.css'
+import './styles/footer.css'
+import './styles/services.css'
 
 export const metadata = {
   title: "Akbar Soft",
