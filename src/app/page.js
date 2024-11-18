@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "./components/header/header";
 import Services from "./components/services/services";
+import Footer from "./components/footer/footer";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </Head>
       <Header />
       <Services />
+      <Footer />
     </>
   );
 };
