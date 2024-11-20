@@ -3,7 +3,7 @@ import { BsFillTelephonePlusFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-import GoogleMap from '../components/GoogleMaps';
+import GoogleMap from '../components/GoogleMap';
 
 export default function ContactsComp() {
   return (
@@ -31,10 +31,10 @@ export default function ContactsComp() {
             </div>
           </div>
           <div className="contacts-blok__section-2">
-            <form 
-              className="contacts-blok__form" 
-              method="POST" 
-              data-netlify="true" 
+            <form
+              className="contacts-blok__form"
+              method="POST"
+              data-netlify="true"
               name="contact-form"
             >
               {/* Скрытое поле для Netlify */}
@@ -63,10 +63,10 @@ export default function ContactsComp() {
               <div className="contacts-blok__form__section">
                 <div className='contacts-blok__form__section-div'>
                   <label htmlFor="message">Сообщение*</label>
-                  <textarea 
-                    name="message" 
-                    required 
-                    minLength={10} 
+                  <textarea
+                    name="message"
+                    required
+                    minLength={10}
                     maxLength={100}>
                   </textarea>
                 </div>
