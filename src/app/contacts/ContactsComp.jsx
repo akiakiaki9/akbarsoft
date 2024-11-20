@@ -62,7 +62,6 @@ export default function ContactsComp() {
         <div className="contacts-blok">
           <div className="contacts-blok__section-1">
             <div className='contacts-blok__section-1__div'>
-              <p>Обратная связь</p>
               <h1>Свяжитесь с нами для обратной связи!</h1>
             </div>
             <div className="contacts-blok__section__container-parent">

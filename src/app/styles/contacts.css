@@ -1,5 +1,7 @@
 .contacts {
     padding: 20px 150px;
+    background-color: #000;
+    color: #fff;
 }
 
 .contacts-blok {
@@ -16,7 +18,7 @@
 }
 
 .contacts-blok__section-1 h1 {
-    font-size: 270%;
+    font-size: 250%;
     color: #fff;
     max-width: 500px;
 }
@@ -41,7 +43,7 @@
 }
 
 .contacts-blok__section__container p:hover {
-    color: var(--orange-color);
+    color: var(--violet-color);
 }
 
 .contacts-blok__section__container p a {
@@ -51,7 +53,7 @@
 }
 
 .contacts-blok__section__container p a:hover {
-    color: var(--orange-color);
+    color: var(--violet-color);
 }
 
 .contacts-blok__section-2 {
@@ -61,7 +63,7 @@
 
 .contacts__icon {
     font-size: 120%;
-    color: var(--orange-color);
+    color: var(--violet-color);
 }
 
 .contacts-blok__form {
@@ -98,7 +100,7 @@
 }
 
 .contacts-blok__form__section-div input:focus {
-    border: 2px solid var(--orange-color);
+    border: 2px solid var(--violet-color);
 }
 
 .contacts-blok__form__section-div textarea {
@@ -116,13 +118,13 @@
 }
 
 .contacts-blok__form__section-div textarea:focus {
-    border: 2px solid var(--orange-color);
+    border: 2px solid var(--violet-color);
 }
 
 .contacts-blok__form button {
     font-size: 110%;
     color: #fff;
-    background-color: var(--orange-color);
+    background-color: var(--violet-color);
     padding: 10px 15px;
     border-radius: 10px;
     transition: .5s;
