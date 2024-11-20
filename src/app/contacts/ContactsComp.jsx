@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import { BsFillTelephonePlusFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
@@ -6,6 +7,55 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import GoogleMap from '../components/GoogleMap';
 
 export default function ContactsComp() {
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    tel: '',
+    age: '',
+    body: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("https://formspree.io/f/mpwaljag", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert('Thanks for registration!');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          tel: '',
+          age: '',
+          gender: '',
+          examType: '',
+          body: ''
+        });
+      } else {
+        alert('Error submitting form.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error submitting form.');
+    }
+  };
+
   return (
     <>
       <div className='contacts'>
@@ -36,39 +86,66 @@ export default function ContactsComp() {
               method="POST"
               data-netlify="true"
               name="contact-form"
+              onSubmit={handleFormSubmit}
             >
               {/* Скрытое поле для Netlify */}
               <input type="hidden" name="form-name" value="contact-form" />
 
               <div className="contacts-blok__form__section">
                 <div className="contacts-blok__form__section-div">
-                  <label htmlFor="full-name">Полное Имя*</label>
-                  <input type="text" name="full-name" required minLength={3} />
+                  <label htmlFor="firstName">Имя*</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
+                    minLength={3}
+                  />
                 </div>
                 <div className="contacts-blok__form__section-div">
-                  <label htmlFor="email">Email*</label>
-                  <input type="email" name="email" required />
+                  <label htmlFor="lastName">Фамилия*</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </div>
               </div>
               <div className="contacts-blok__form__section">
                 <div className="contacts-blok__form__section-div">
-                  <label htmlFor="project-type">Тема обращение*</label>
-                  <input type="text" name="project-type" required minLength={5} />
+                  <label htmlFor="tel">Телефон*</label>
+                  <input
+                    type="tel"
+                    name="tel"
+                    value={formData.tel}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </div>
                 <div className="contacts-blok__form__section-div">
-                  <label htmlFor="phone">Телефон*</label>
-                  <input type="tel" name="phone" required minLength={12} />
+                  <label htmlFor="age">Возраст*</label>
+                  <input
+                    type="number"
+                    name="age"
+                    value={formData.age}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
               <div className="contacts-blok__form__section">
                 <div className='contacts-blok__form__section-div'>
-                  <label htmlFor="message">Сообщение*</label>
+                  <label htmlFor="body">Сообщение*</label>
                   <textarea
-                    name="message"
+                    name="body"
+                    value={formData.body}
+                    onChange={handleInputChange}
                     required
                     minLength={10}
-                    maxLength={100}>
-                  </textarea>
+                    maxLength={100}
+                  />
                 </div>
               </div>
               <button type='submit'>
