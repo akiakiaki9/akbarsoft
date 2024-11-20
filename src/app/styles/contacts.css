@@ -1,0 +1,204 @@
+.contacts {
+    padding: 20px 150px;
+}
+
+.contacts-blok {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contacts-blok__section-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts-blok__section-1 h1 {
+    font-size: 270%;
+    color: #fff;
+    max-width: 500px;
+}
+
+.contacts-blok__section__container-parent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts-blok__section__container {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    align-items: center;
+}
+
+.contacts-blok__section__container p {
+    color: var(--white-color);
+    max-width: 220px;
+    transition: .5s;
+}
+
+.contacts-blok__section__container p:hover {
+    color: var(--orange-color);
+}
+
+.contacts-blok__section__container p a {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.contacts-blok__section__container p a:hover {
+    color: var(--orange-color);
+}
+
+.contacts-blok__section-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__icon {
+    font-size: 120%;
+    color: var(--orange-color);
+}
+
+.contacts-blok__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts-blok__form__section {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.contacts-blok__form__section-div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+
+.contacts-blok__form__section-div label {
+    color: #fff;
+}
+
+.contacts-blok__form__section-div input {
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: none;
+    border: 2px solid var(--white-color);
+    color: #fff;
+    outline: none;
+    width: 300px;
+}
+
+.contacts-blok__form__section-div input:focus {
+    border: 2px solid var(--orange-color);
+}
+
+.contacts-blok__form__section-div textarea {
+    border: 1px solid var(--white-color);
+    border-radius: 10px;
+    max-width: 630px;
+    min-height: 200px;
+    max-height: 250px;
+    padding: 10px 15px;
+    background: none;
+    border: 2px solid var(--white-color);
+    color: #fff;
+    outline: none;
+    width: 630px;
+}
+
+.contacts-blok__form__section-div textarea:focus {
+    border: 2px solid var(--orange-color);
+}
+
+.contacts-blok__form button {
+    font-size: 110%;
+    color: #fff;
+    background-color: var(--orange-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+.contacts-blok__form button:hover {
+    opacity: .7;
+}
+
+@media (max-width: 1490px) {
+    .contacts {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1177px) {
+    .contacts-blok {
+        flex-direction: column;
+    }
+
+    .contacts-blok__section-1 {
+        align-items: center;
+    }
+
+    .contacts-blok__section-1__div {
+        text-align: center;
+    }
+
+    .contacts-blok__section-2 {
+        align-items: center;
+    }
+}
+
+@media (max-width: 662px) {
+    .contacts-blok__form__section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contacts-blok__form__section-div input {
+        width: 630px;
+    }
+
+    .contacts-blok__form__section-div textarea {
+        width: 100%;
+    }
+
+    .contacts-blok__form button {
+        margin: auto;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .contacts-blok__section-2 {
+        align-items: center;
+    }
+
+    .contacts-blok__form__section-div input {
+        width: 300px;
+    }
+
+    .contacts-blok__form__section-div textarea {
+        width: 100%;
+    }
+}
+
+@media (max-width: 330px) {
+    .contacts-blok__form__section-div input {
+        width: 250px;
+    }
+}

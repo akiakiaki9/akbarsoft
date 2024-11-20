@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import React from 'react'
 
 export default function HeaderComp() {
@@ -18,7 +19,7 @@ export default function HeaderComp() {
                 </div>
                 <div className="header__content__section-2">
                     <a href="#services"><button className='header__button-1'>Услуги</button></a>
-                    <button className='header__button-2'>Контакты</button>
+                    <Link href="/contacts"><button className='header__button-2'>Контакты</button></Link>
                 </div>
             </div>
         </div>
