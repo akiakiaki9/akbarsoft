@@ -92,7 +92,7 @@ export default function GoogleMap() {
 
     return (
         <iframe
-            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28717.32431348289!2d-74.38695726388464!3d40.83813496968469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3a82f1352d0dd%3A0x81d4f72c4435aab5!2z0KLRgNC-0Lkg0JzQtdC00L7Rg9GBINCj0Y3RgtC70LXQvdC00YE!5e0!3m2!1sru!2s!4v1731510592186!5m2!1sru!2s&style=${encodeURIComponent(
+            src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.0041948361938!2d64.41707775371007!3d39.74758942338089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f500700139f797d%3A0x7eb6a3027814b0b0!2sAkbar%20SOFT!5e0!3m2!1sru!2s!4v1732094738871!5m2!1sru!2s${encodeURIComponent(
                 mapStylesString
             )}`}
             width="100%"
@@ -103,4 +103,5 @@ export default function GoogleMap() {
             referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
     );
+
 };
