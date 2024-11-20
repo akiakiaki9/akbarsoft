@@ -16,6 +16,23 @@ export default function ContactsComp() {
     body: ''
   });
 
+  const [isBlocked, setIsBlocked] = useState(false); // Состояние для блокировки отправки
+  const [blockTimeRemaining, setBlockTimeRemaining] = useState(0); // Оставшееся время блокировки
+
+  const maxSubmissions = 5; // Максимальное количество отправок
+  const timeWindow = 60 * 1000; // Время в миллисекундах (1 минута)
+  const blockDuration = 5 * 60 * 1000; // Время блокировки (5 минут)
+
+  // Получаем массив отправок из localStorage или инициализируем пустым массивом
+  const getRecentSubmissions = () => {
+    const savedSubmissions = localStorage.getItem('submissions');
+    return savedSubmissions ? JSON.parse(savedSubmissions) : [];
+  };
+
+  const saveSubmissions = (submissions) => {
+    localStorage.setItem('submissions', JSON.stringify(submissions));
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -26,6 +43,24 @@ export default function ContactsComp() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+
+    // Получаем текущие временные метки отправок
+    const currentTime = new Date().getTime();
+    const recentSubmissions = getRecentSubmissions();
+
+    // Фильтруем метки времени отправок, которые произошли в пределах текущей минуты
+    const recentSubmissionsWithinTimeWindow = recentSubmissions.filter(timestamp => currentTime - timestamp <= timeWindow);
+
+    // Если отправлено больше 5 сообщений за последнюю минуту, блокируем форму на 5 минут
+    if (recentSubmissionsWithinTimeWindow.length >= maxSubmissions) {
+      setIsBlocked(true);
+      setBlockTimeRemaining(blockDuration);
+      return;
+    }
+
+    // Добавляем текущую метку времени отправки
+    const updatedSubmissions = [...recentSubmissions, currentTime].slice(-10); // Храним только последние 10 отправок
+    saveSubmissions(updatedSubmissions);
 
     try {
       const response = await fetch("https://formspree.io/f/mpwaljag", {
@@ -55,6 +90,21 @@ export default function ContactsComp() {
       alert('Error submitting form.');
     }
   };
+
+  // Таймер для отсчета времени блокировки
+  React.useEffect(() => {
+    if (isBlocked && blockTimeRemaining > 0) {
+      const timer = setInterval(() => {
+        setBlockTimeRemaining(prev => prev - 1000);
+      }, 1000);
+
+      return () => clearInterval(timer);
+    }
+
+    if (blockTimeRemaining <= 0) {
+      setIsBlocked(false);
+    }
+  }, [isBlocked, blockTimeRemaining]);
 
   return (
     <>
@@ -145,10 +195,13 @@ export default function ContactsComp() {
                   />
                 </div>
               </div>
-              <button type='submit'>
+              <button type='submit' disabled={isBlocked}>
                 <p>Отправить</p>
                 <MdOutlineArrowRightAlt />
               </button>
+              {isBlocked && (
+                <p>Вы превысили лимит отправок. Попробуйте снова через {Math.ceil(blockTimeRemaining / 1000)} секунд.</p>
+              )}
             </form>
           </div>
         </div>
