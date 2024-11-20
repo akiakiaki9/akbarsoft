@@ -72,7 +72,7 @@ export default function ContactsComp() {
       });
 
       if (response.ok) {
-        alert('Thanks for registration!');
+        alert('Спасибо за обращение!');
         setFormData({
           firstName: '',
           lastName: '',
