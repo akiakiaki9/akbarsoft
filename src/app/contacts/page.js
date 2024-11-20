@@ -1,5 +1,5 @@
 import React from 'react';
-// import ContactsComp from './ContactsComp';
+import ContactsComp from './ContactsComp';
 import Footer from '../components/footer/footer';
 import Head from 'next/head';
 
@@ -39,7 +39,7 @@ export default function Contacts() {
                 <meta name="twitter:title" content={metadata.twitterTitle} />
                 <meta name="twitter:description" content={metadata.twitterDescription} />
             </Head>
-            Contacts
+            <ContactsComp />
             <Footer />
         </div>
     );
