@@ -1,11 +1,14 @@
 'use client'
 import React, { useState } from 'react';
-import SERVICES from '@/app/utils/pricelist';
+import { SERVICES, WEBSITE } from '@/app/utils/pricelist';
 import { GoArrowRight } from "react-icons/go";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function PriceListComp() {
-    const [isMonthly, setIsMonthly] = useState(true); // По умолчанию ежемесячный
+    const [isWebSite, setIsWebSite] = useState(true); // По умолчанию веб-сайты
+
+    // Выбор данных на основе состояния
+    const dataToDisplay = isWebSite ? WEBSITE : SERVICES;
 
     return (
         <div className='pricelist' id='services'>
@@ -13,59 +16,43 @@ export default function PriceListComp() {
                 <div className="pricelist-blok__section pricelist-blok__section-1">
                     <div className="pricelist-blok__section-part">
                         <p>Цены и упаковка</p>
-                        <h1>Лучшие цен для клиента</h1>
+                        <h1>Лучшие цены для клиента</h1>
                     </div>
                     <div className="pricelist-blok__section-part__container">
                         <button
-                            style={{ backgroundColor: isMonthly ? 'var(--violet-color)' : '#1d1d1d' }}
-                            onClick={() => setIsMonthly(true)}
+                            style={{ backgroundColor: isWebSite ? 'var(--violet-color)' : '#1d1d1d' }}
+                            onClick={() => setIsWebSite(true)}
                         >
-                            Monthly
+                            Web
                         </button>
                         <button
-                            style={{ backgroundColor: !isMonthly ? 'var(--violet-color)' : '#1d1d1d' }}
-                            onClick={() => setIsMonthly(false)}
+                            style={{ backgroundColor: !isWebSite ? 'var(--violet-color)' : '#1d1d1d' }}
+                            onClick={() => setIsWebSite(false)}
                         >
-                            Yearly
+                            Service
                         </button>
                     </div>
                 </div>
                 <div className="pricelist-blok__section pricelist-blok__section-2">
-                    {SERVICES.map(item => (
+                    {dataToDisplay.map(item => (
                         <div className="pricelist-blok__section-2__container-card" key={item.id}>
-                            <h1>{item.rate}</h1>
+                            <h1>{item.name}</h1>
                             <div className='pricelist__div'></div>
                             <div className="pricelist-blok__section-2__container-card-part">
-                                <h1>${isMonthly ? item.monthly_price : item.yearly_price}/</h1>
-                                <p>{isMonthly ? 'monthly' : 'yearly'}</p>
+                                <h1>
+                                    {isWebSite ? `$${item.min_price} - $${item.max_price}` : `$${item.price}`}
+                                </h1>
                             </div>
-                            <p className='pricelist-blok__section-2__container-card-p'>Per subscriber per year</p>
                             <div className='pricelist__div'></div>
                             <div className="pricelist-blok__section-2__container-card__container">
-                                <div className="pricelist-blok__section-2__container-card__container-part">
-                                    <GoArrowRight className='pricelist__icon1' />
-                                    <p>Static responsive website</p>
-                                </div>
-                                <div className="pricelist-blok__section-2__container-card__container-part">
-                                    <GoArrowRight className='pricelist__icon1' />
-                                    <p>Video marketing</p>
-                                </div>
-                                <div className="pricelist-blok__section-2__container-card__container-part">
-                                    <GoArrowRight className='pricelist__icon1' />
-                                    <p>Keywords research</p>
-                                </div>
-                                <div className="pricelist-blok__section-2__container-card__container-part">
-                                    <GoArrowRight className='pricelist__icon1' />
-                                    <p>Facebook campaign</p>
-                                </div>
-                                <div className="pricelist-blok__section-2__container-card__container-part">
-                                    <GoArrowRight className='pricelist__icon1' />
-                                    <p>eCommerce solution</p>
-                                </div>
-                                <div className="pricelist-blok__section-2__container-card__container-part">
-                                    <GoArrowRight className='pricelist__icon1' />
-                                    <p>Google adword</p>
-                                </div>
+                                {[item.subtitle1, item.subtitle2, item.subtitle3, item.subtitle4, item.subtitle5, item.subtitle6]
+                                    .filter(Boolean) // Убираем пустые подзаголовки
+                                    .map((subtitle, index) => (
+                                        <div className="pricelist-blok__section-2__container-card__container-part" key={index}>
+                                            <GoArrowRight className='pricelist__icon1' />
+                                            <p>{subtitle}</p>
+                                        </div>
+                                    ))}
                             </div>
                             <div className="pricelist__div"></div>
                             <div className="pricelist-blok__footer">

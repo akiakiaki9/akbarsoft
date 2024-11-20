@@ -1,0 +1,144 @@
+.navbar {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #000000;
+    /* Прозрачный фон по умолчанию */
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    z-index: 1000;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Класс для применения эффекта при скролле */
+.navbar.scrolled {
+    background-color: rgba(51, 51, 51, 0.7);
+    /* Тёмный полупрозрачный фон */
+    backdrop-filter: blur(8px);
+    /* Применение размытия */
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar__brand {
+    transition: .5s;
+}
+
+.navbar-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-weight: 200;
+}
+
+.navbar-items li {
+    list-style: none;
+}
+
+.navbar-items li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-size: 120%;
+    transition: .5s;
+}
+
+.navbar-items li a:hover {
+    color: var(--violet-light-color);
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+    transition: .5s;
+}
+
+.menu-icon:hover {
+    color: var(--violet-color);
+}
+
+.navbar-fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-10%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.navbar-fullscreen-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+
+.menu-items {
+    list-style: none;
+    text-align: center;
+    font-weight: 200;
+}
+
+.menu-items li {
+    list-style: none;
+}
+
+.menu-items li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-size: 120%;
+    transition: .5s;
+}
+
+.menu-items li {
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-items li:hover {
+    color: #ddd;
+}
+
+.navbar__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 250%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.navbar__close:hover {
+    color: var(--violet-color);
+}
+
+@media (max-width: 1200px) {
+    .navbar-items {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

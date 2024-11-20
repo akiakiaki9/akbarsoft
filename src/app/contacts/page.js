@@ -2,6 +2,7 @@ import React from 'react';
 import ContactsComp from './ContactsComp';
 import Footer from '../components/footer/footer';
 import Head from 'next/head';
+// import Navbar from '../components/navbar/navbar';
 
 export default function Contacts() {
     const metadata = {
@@ -39,6 +40,7 @@ export default function Contacts() {
                 <meta name="twitter:title" content={metadata.twitterTitle} />
                 <meta name="twitter:description" content={metadata.twitterDescription} />
             </Head>
+            {/* <Navbar /> */}
             <ContactsComp />
             <Footer />
         </div>

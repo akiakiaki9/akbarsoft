@@ -4,6 +4,7 @@ import './styles/footer.css';
 import './styles/services.css';
 import './styles/contacts.css';
 import './styles/title.css';
+import './styles/navbar.css';
 
 export const metadata = {
   title: "Akbar Soft",
