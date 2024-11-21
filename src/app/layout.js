@@ -9,7 +9,7 @@ import './styles/navbar.css';
 export const metadata = {
   title: "Akbar Soft",
   description: "Freelance Company For Your Business",
-  keywords: "Freelance, IT Company, Business",
+  keywords: "Freelance, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/",
   ogTitle: "Akbar Soft - Freelance Company",
