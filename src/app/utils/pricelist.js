@@ -15,7 +15,7 @@ export const WEBSITE = [
         id: 2,
         name: 'Business Website',
         min_price: '300',
-        max_price: '500',
+        max_price: '400',
         subtitle1: 'Многостраничный',
         subtitle2: 'CMS интеграция',
         subtitle3: 'SEO-блог',
@@ -26,8 +26,8 @@ export const WEBSITE = [
     {
         id: 3,
         name: 'Corporate Website',
-        min_price: '500',
-        max_price: '600',
+        min_price: '400',
+        max_price: '500',
         subtitle1: 'Корпоративный стиль',
         subtitle2: 'Многоязычность',
         subtitle3: 'CRM интеграция',
@@ -52,7 +52,7 @@ export const SERVICES = [
     {
         id: 2,
         name: 'Бизнес Логотип',
-        price: '200',
+        price: '100',
         subtitle1: 'Индивидуальный стиль',
         subtitle2: 'Векторный дизайн',
         subtitle3: 'Подготовка файлов',
@@ -63,7 +63,7 @@ export const SERVICES = [
     {
         id: 3,
         name: 'Сборка ПК',
-        price: '300',
+        price: '200',
         subtitle1: 'Подбор компонентов',
         subtitle2: 'Сборка системы',
         subtitle3: 'Тестирование ПК',
