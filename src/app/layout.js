@@ -5,6 +5,7 @@ import './styles/services.css';
 import './styles/contacts.css';
 import './styles/title.css';
 import './styles/navbar.css';
+import Script from 'next/script';
 
 export const metadata = {
   title: "Akbar Soft",
