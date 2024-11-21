@@ -10,6 +10,7 @@
     color: #fff;
     z-index: 1000;
     transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+    border-bottom: 1px solid var(--violet-color);
 }
 
 /* Класс для применения эффекта при скролле */
@@ -25,6 +26,20 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.navbar-content a {
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.navbar-content a h2 span {
+    color: var(--violet-color);
+}
+
+.navbar-content a:hover {
+    opacity: .7;
 }
 
 .navbar__brand {
