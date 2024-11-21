@@ -6,7 +6,7 @@ export default function HeaderComp() {
     return (
         <div className="header">
             <img
-                src="/header/videobg.gif" />
+                src="/header/videobg.gif" alt="Akbar Soft Animation" />
             <div className="header__effects"></div>
             <div className="header__content">
                 <div className="header__content__section-1">
