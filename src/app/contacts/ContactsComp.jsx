@@ -5,6 +5,8 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
 import GoogleMap from '../components/GoogleMap';
+import { FaTelegram } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 
 export default function ContactsComp() {
 
@@ -127,6 +129,14 @@ export default function ContactsComp() {
                 <FaLocationDot className='contacts__icon' />
                 <p>Bukhara, Korzinka-3</p>
               </div>
+            </div>
+            <div className="contacts-blok__section-1__footer">
+              <a href='https://t.me/akbar_soft' className="contacts-blok__section-1__footer__div">
+                <FaTelegram className='contacts-blok__section-1__footer__icon' />
+              </a>
+              <a href='https://www.instagram.com/akbarsoft_company/profilecard/?igsh=MXZsdXI1c3NwMnY0cw==' className="contacts-blok__section-1__footer__div">
+                <FaInstagramSquare className='contacts-blok__section-1__footer__icon' />
+              </a>
             </div>
           </div>
           <div className="contacts-blok__section-2">

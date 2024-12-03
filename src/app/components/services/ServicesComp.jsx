@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { SERVICES, WEBSITE } from '@/app/utils/pricelist';
 import { GoArrowRight } from "react-icons/go";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from 'next/link';
 
 export default function PriceListComp() {
     const [isWebSite, setIsWebSite] = useState(true); // По умолчанию веб-сайты
@@ -56,7 +57,7 @@ export default function PriceListComp() {
                             </div>
                             <div className="pricelist__div"></div>
                             <div className="pricelist-blok__footer">
-                                <p>Purchase Now</p>
+                                <Link href='/contacts'><p>Purchase Now</p></Link>
                                 <FaArrowRightLong className='pricelist__icon2' />
                             </div>
                         </div>

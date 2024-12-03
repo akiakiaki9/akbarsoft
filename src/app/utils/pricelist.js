@@ -5,11 +5,11 @@ export const WEBSITE = [
         min_price: '100',
         max_price: '300',
         subtitle1: 'Простой дизайн',
-        subtitle2: 'Лидогенерация',
-        subtitle3: 'SEO-оптимизация',
-        subtitle4: 'Адаптивность',
-        subtitle5: 'Форма захвата',
-        subtitle6: 'Быстрая загрузка'
+        subtitle2: 'Адаптивность',
+        subtitle3: 'SEO',
+        subtitle4: 'Быстрая загрузка',
+        subtitle5: 'CTA-кнопки',
+        subtitle6: 'Анимация'
     },
     {
         id: 2,
@@ -18,10 +18,10 @@ export const WEBSITE = [
         max_price: '400',
         subtitle1: 'Многостраничный',
         subtitle2: 'CMS интеграция',
-        subtitle3: 'SEO-блог',
+        subtitle3: 'SEO блог',
         subtitle4: 'Аналитика',
-        subtitle5: 'Социальные сети',
-        subtitle6: 'Удобная навигация'
+        subtitle5: 'Соцсети',
+        subtitle6: 'Навигация'
     },
     {
         id: 3,
@@ -32,8 +32,8 @@ export const WEBSITE = [
         subtitle2: 'Многоязычность',
         subtitle3: 'CRM интеграция',
         subtitle4: 'Безопасность',
-        subtitle5: 'SEO-оптимизация',
-        subtitle6: 'Мобильная версия'
+        subtitle5: 'SEO',
+        subtitle6: 'Адаптивность'
     }
 ];
 

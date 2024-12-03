@@ -150,6 +150,10 @@
     gap: 10px;
 }
 
+.pricelist-blok__footer a {
+    text-decoration: none;
+}
+
 .pricelist-blok__footer p {
     color: #fff;
     transition: .5s;

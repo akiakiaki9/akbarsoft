@@ -50,7 +50,7 @@ export default function NavbarComp() {
                 <Link href="/"><h2>Akbar <span>Soft</span></h2>{/*<img src="/images/brand.svg" alt="Brand" className='navbar__brand' />*/}</Link>
                 {!isMobile && (
                     <ul className="navbar-items">
-                        <li><Link onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--violet-color)' : '' }} href="/">Главное</Link></li>
+                        <li><Link onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--violet-color)' : '' }} href="/">Главная</Link></li>
                         {/* <li><Link onClick={() => handleLinkClick('/about-us')} style={{ color: activePage === '/about-us' ? 'var(--violet-color)' : '' }} href="/about-us">About</Link></li>
                         <li><Link onClick={() => handleLinkClick('/services')} style={{ color: activePage === '/services' ? 'var(--violet-color)' : '' }} href="/services">Services</Link></li>
                         <li><Link onClick={() => handleLinkClick('/portfolio')} style={{ color: activePage === '/portfolio' ? 'var(--violet-color)' : '' }} href="/portfolio">Portfolio</Link></li> */}
@@ -65,7 +65,7 @@ export default function NavbarComp() {
             {isMenuOpen && isMobile && (
                 <div className="navbar-fullscreen-menu active">
                     <ul className="menu-items">
-                        <li><Link onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--violet-color)' : '' }} href="/">Home</Link></li>
+                        <li><Link onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--violet-color)' : '' }} href="/">Главная</Link></li>
                         {/* <li><Link onClick={() => handleLinkClick('/about-us')} style={{ color: activePage === '/about-us' ? 'var(--violet-color)' : '' }} href="/about-us">About</Link></li>
                         <li><Link onClick={() => handleLinkClick('/services')} style={{ color: activePage === '/services' ? 'var(--violet-color)' : '' }} href="/services">Services</Link></li>
                         <li><Link onClick={() => handleLinkClick('/portfolio')} style={{ color: activePage === '/portfolio' ? 'var(--violet-color)' : '' }} href="/portfolio">Portfolio</Link></li> */}
