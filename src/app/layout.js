@@ -9,7 +9,7 @@ import Script from 'next/script';
 
 export const metadata = {
   title: "Akbar Soft",
-  description: "Фриланс компания для вашего бизнеса",
+  description: "Фриланс команда для вашего бизнеса",
   keywords: "Freelance, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/",
