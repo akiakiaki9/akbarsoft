@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+      <meta name="yandex-verification" content="f201683b2288240d" />
         <link rel="icon" href="/images/akbarsoftfinal.PNG" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TVGXYSNSY9"
