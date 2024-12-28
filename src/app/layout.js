@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       <meta name="yandex-verification" content="f201683b2288240d" />
+      <meta name="msvalidate.01" content="9727FEB9B9A0FBF3F14C214D959E9BB5" />
         <link rel="icon" href="/images/akbarsoftfinal.PNG" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TVGXYSNSY9"
