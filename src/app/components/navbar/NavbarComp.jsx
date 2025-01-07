@@ -51,10 +51,8 @@ export default function NavbarComp() {
                 {!isMobile && (
                     <ul className="navbar-items">
                         <li><Link onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--violet-color)' : '' }} href="/">Главная</Link></li>
-                        {/* <li><Link onClick={() => handleLinkClick('/about-us')} style={{ color: activePage === '/about-us' ? 'var(--violet-color)' : '' }} href="/about-us">About</Link></li>
-                        <li><Link onClick={() => handleLinkClick('/services')} style={{ color: activePage === '/services' ? 'var(--violet-color)' : '' }} href="/services">Services</Link></li>
-                        <li><Link onClick={() => handleLinkClick('/portfolio')} style={{ color: activePage === '/portfolio' ? 'var(--violet-color)' : '' }} href="/portfolio">Portfolio</Link></li> */}
                         <li><Link onClick={() => handleLinkClick('/contacts')} style={{ color: activePage === '/contacts' ? 'var(--violet-color)' : '' }} href="/contacts">Контакты</Link></li>
+                        <li><Link onClick={() => handleLinkClick('/projects')} style={{ color: activePage === '/projects' ? 'var(--violet-color)' : '' }} href="/projects">Работы</Link></li>
                     </ul>
                 )}
                 <div onClick={toggleMenu} className="menu-icon">
@@ -66,10 +64,8 @@ export default function NavbarComp() {
                 <div className="navbar-fullscreen-menu active">
                     <ul className="menu-items">
                         <li><Link onClick={() => handleLinkClick('/')} style={{ color: activePage === '/' ? 'var(--violet-color)' : '' }} href="/">Главная</Link></li>
-                        {/* <li><Link onClick={() => handleLinkClick('/about-us')} style={{ color: activePage === '/about-us' ? 'var(--violet-color)' : '' }} href="/about-us">About</Link></li>
-                        <li><Link onClick={() => handleLinkClick('/services')} style={{ color: activePage === '/services' ? 'var(--violet-color)' : '' }} href="/services">Services</Link></li>
-                        <li><Link onClick={() => handleLinkClick('/portfolio')} style={{ color: activePage === '/portfolio' ? 'var(--violet-color)' : '' }} href="/portfolio">Portfolio</Link></li> */}
                         <li><Link onClick={() => handleLinkClick('/contacts')} style={{ color: activePage === '/contacts' ? 'var(--violet-color)' : '' }} href="/contacts">Контакты</Link></li>
+                        <li><Link onClick={() => handleLinkClick('/projects')} style={{ color: activePage === '/projects' ? 'var(--violet-color)' : '' }} href="/projects">Работы</Link></li>
                         <AiOutlineClose className='navbar__close' onClick={toggleMenu} />
                     </ul>
                 </div>

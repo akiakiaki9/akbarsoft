@@ -18,7 +18,7 @@ export default function HeaderComp() {
                     </p>
                 </div>
                 <div className="header__content__section-2">
-                    <a href="#services"><button className='header__button-1'>Услуги</button></a>
+                    <Link href="/projects"><button className='header__button-1'>Работы</button></Link>
                     <Link href="/contacts"><button className='header__button-2'>Контакты</button></Link>
                 </div>
             </div>
