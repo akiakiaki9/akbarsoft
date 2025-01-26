@@ -5,7 +5,7 @@ import Footer from '../components/footer/footer'
 
 export const metadata = {
   title: 'Наши Работы — проекты Akbar Soft',
-  description: 'Посмотрите проекты, выполненные командой Akbar Soft в Бухаре. Создание корпоративных сайтов, лендингов и других веб-решений.',
+  description: 'Посмотрите проекты, выполненные командой Akbar Soft. Создание корпоративных сайтов, лендингов и других веб-решений.',
   keywords: 'Akbar Soft, Наши Работы, проекты, портфолио, веб-разработка, веб-сайты, веб-дизайн, Бухара, Bukhara, веб, sayt, sayt zakaz, sayt taxlash, sayt sotib olish, web-site, web-sites, web site, web-sites, web site order',
   robots: 'index, follow',
   canonical: 'https://akbarsoft.uz/projects',

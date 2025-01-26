@@ -10,13 +10,13 @@ import Script from 'next/script';
 
 export const metadata = {
   title: "Akbar Soft",
-  description: "Фриланс команда для вашего бизнеса",
+  description: "Фриланс команда улучшит ваш бизнес",
   keywords: "Freelance, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/",
   openGraph: {
-    title: "Akbar Soft - Фриланс Компания",
-    description: "Мы предоставляем IT-услуги для вашего бизнеса. Свяжитесь с нами, чтобы узнать больше.",
+    title: "Akbar Soft - Фриланс Команда",
+    description: "Мы разрабатываем разные веб-сайты для вашего бизнеса. Свяжитесь с нами, чтобы узнать больше.",
     url: "https://akbarsoft.uz/",
     type: "website",
     locale: "en_US",
@@ -24,7 +24,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Akbar Soft - IT-решения для вашего бизнеса",
-    description: "Откройте для себя внештатные ИТ-услуги для развития бизнеса в компании Akbar Soft.",
+    description: "Откройте для себя внештатные ИТ-услуги для развития бизнеса с командой Akbar Soft.",
   },
 };
 
