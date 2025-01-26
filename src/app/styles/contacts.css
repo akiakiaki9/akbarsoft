@@ -2,7 +2,7 @@
     padding: 50px 150px 20px 150px;
     background-color: #000;
     color: #fff;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .contacts-blok {
@@ -16,6 +16,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.contacts-blok__section-1__div h1 {
+    font-family: sans-serif;
 }
 
 .contacts-blok__section-1 h1 {
@@ -193,6 +197,12 @@
 
     .contacts-blok__section-2 {
         align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-blok__section-1__div h1 {
+        font-size: 200%;
     }
 }
 

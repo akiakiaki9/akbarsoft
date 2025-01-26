@@ -2,7 +2,6 @@
     width: 100%;
     padding: 10px 15px;
     background-color: #000000;
-    /* Прозрачный фон по умолчанию */
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -11,14 +10,12 @@
     z-index: 1000;
     transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
     border-bottom: 1px solid var(--violet-color);
+    font-family: sans-serif;
 }
 
-/* Класс для применения эффекта при скролле */
 .navbar.scrolled {
     background-color: rgba(51, 51, 51, 0.7);
-    /* Тёмный полупрозрачный фон */
     backdrop-filter: blur(8px);
-    /* Применение размытия */
 }
 
 .navbar-content {
