@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import Contacts from './Contacts'
 import Footer from '../components/footer/Footer'
