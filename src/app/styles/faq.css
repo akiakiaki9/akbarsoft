@@ -1,0 +1,137 @@
+.faq {
+    margin-top: 100px;
+}
+
+.faq-blok {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.faq-blok__section-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-blok__section-1__p-1 {
+    color: var(--purple-color);
+    font-weight: 600;
+    font-size: 95%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.faq-blok__section-1 h1 {
+    color: #fff;
+    font-size: 220%;
+    margin-bottom: 20px;
+}
+
+.faq-blok__section-1__p-2 {
+    font-family: var(--p-ff);
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 350px;
+}
+
+.faq-blok__section-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-blok__section-2-part {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-light-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-blok__section-2-part__header {
+    background-image: radial-gradient(at top left, #2B2338 0%, #0A0118 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 15px;
+    cursor: pointer;
+    min-width: 750px;
+}
+
+.faq__title {
+    color: #fff;
+    font-weight: 600;
+}
+
+.faq__icon {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+}
+
+.faq__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    background-color: #0F0520;
+}
+
+.faq-blok__section-2-part.open .faq__content {
+    max-height: 200px;
+    padding: 20px 15px;
+}
+
+.faq__subtitle {
+    font-family: var(--p-ff);
+    color: var(--text-color);
+    line-height: 1.5;
+    max-width: 700px;
+}
+
+@media (max-width: 1200px) {
+    .faq-blok {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media (max-width: 1000px) {
+    .faq-blok__section-2-part {
+        max-width: 800px;
+        width: 100%;
+        min-width: 200px;
+        overflow: hidden;
+    }
+    .faq-blok__section-2-part__header {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-blok__section-1 button {
+        font-size: 11px;
+    }
+    .faq-blok__section-1__p-1 {
+        font-size: 12px;
+    }
+
+    .faq-blok__section-1 h1 {
+        font-size: 24px;
+    }
+
+    .faq-blok__section-1__p-2 {
+        font-size: 14px;
+    }
+
+    .faq-blok__section-2 p {
+        font-size: 14px;
+    }
+    .faq-blok__section-2-part__header {
+        padding: 15px 10px;
+    }
+
+    .faq-blok__section-2-part.open .faq__content {
+        padding: 15px 10px;
+    }
+}

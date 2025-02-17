@@ -1,124 +1,119 @@
 .header {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: start;
-    align-items: center;
     position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    background-image: radial-gradient(at top center, #0A011880 10%, #0A0118 85%);
 }
 
-.header img {
-    object-fit: cover;
+.header video {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header-blok {
+    position: relative;
     z-index: 1;
-    width: 100%;
-    height: 100vh;
-}
-
-.header__effects {
-    position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.header__content {
-    z-index: 2;
-    color: #ffffff;
+    max-width: 800px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 0 0 0 150px;
+    align-items: center;
 }
 
-.header__content__section-1 h1 {
-    font-size: 450%;
-    font-family: "Poppins", serif;
+.header-blok h1 {
+    font-size: 350%;
+    margin-bottom: 10px;
 }
 
 .header__p1 {
-    font-size: 120%;
-    font-family: sans-serif;
-    margin-bottom: 20px;
-    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 1px solid var(--purple-color);
+    border-radius: 30px;
+    width: 180px;
+    padding: 5px 2px;
+    font-size: 90%;
+    margin-bottom: 10px;
 }
 
 .header__p2 {
-    font-size: 100%;
-    font-family: sans-serif;
-    max-width: 720px;
+    color: var(--text-color);
+    max-width: 670px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
 }
 
-.header__content__section-2 {
+.header-blok__container {
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
-.header__content__section-2 button {
-    width: 200px;
-    font-size: 120%;
-    padding: 10px 15px;
-    color: #ffffff;
-    border: 2px solid var(--violet-color);
-    border-radius: 5px;
-    font-weight: bold;
-    font-family: sans-serif;
+.header-blok__container__button-2 {
+    outline: none;
+    padding: 10px 30px;
+    border-radius: 30px;
     transition: .5s;
     cursor: pointer;
-}
-
-.header__button-1 {
-    background-color: var(--violet-color);
-}
-
-.header__button-1:hover {
-    opacity: .6;
-}
-
-.header__button-2 {
     background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 162px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
-.header__button-2:hover {
-    background-color: var(--violet-color);
+.header-blok__container__button-2:hover {
+    background-image: linear-gradient(120deg, var(--purple-color) 20%, var(--violet-color) 60%);
+    border-color: linear-gradient(120deg, var(--purple-color) 20%, var(--violet-color) 60%);
 }
 
-@media (max-width: 862px) {
-    .header__content {
-        padding: 0 10px;
+@media (max-width: 768px) {
+    .header {
+        background: url(/images/header/header-bg.png) 50% 50%;
+        background-image: radial-gradient(at top center, #0A011880 10%, #0A0118 85%);
+        background-size: cover;
     }
-}
-
-@media (max-width: 442px) {
-    
-    .header__content__section-1 h1 {
-        font-size: 350%;
+    .header video {
+        display: none;
     }
-
-    .header__content {
-        text-align: center;
+    .header-blok h1 {
+        font-size: 32px;
     }
-
-    .header__content__section-2 {
-        justify-content: center;
+    .header__p1 {
+        font-size: 12px;
     }
-
-    .header__content__section-2 button {
-        width: 150px;
+    .header__p2 {
+        font-size: 14px;
     }
-}
-
-@media (max-width: 337px) {
-    .header__content__section-2 button {
-        width: 130px;
+    .header-blok__container {
+        width: 100%;
+        flex-direction: column;
+    }
+    .header-blok__container button {
+        max-width: 700px;
+        width: 100%;
+        font-size: 11px;
+    }
+    .header-blok__container__button-2 {
+        max-width: 700px;
+        width: 100%;
+        font-size: 11px;
     }
 }

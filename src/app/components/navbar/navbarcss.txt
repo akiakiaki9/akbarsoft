@@ -1,0 +1,166 @@
+.navbar {
+    background: #0a0218;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-light-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar__item {
+    position: relative;
+}
+
+.navbar__item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__item a:hover {
+    color: var(--purple-color);
+}
+
+.navbar__arrow {
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Стили для выпадающего меню */
+.navbar__sub-list {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a0828;
+    min-width: 180px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.navbar__item:hover .navbar__sub-list {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar__sub-list li {
+    padding: 10px 15px;
+}
+
+.navbar__sub-list li a {
+    color: #fff;
+    display: block;
+}
+
+.navbar__sub-list li a:hover {
+    color: var(--purple-color);
+}
+
+/* Кнопка */
+.navbar__button {
+    background-image: linear-gradient(120deg, var(--violet-color) 20%, var(--purple-color) 60%);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar__button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar__button:hover {
+    background-image: linear-gradient(120deg, var(--purple-color) 20%, var(--violet-color) 60%);
+}
+
+/* 📱 Мобильная версия */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .navbar__menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #0a0218;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none;
+    }
+
+    .navbar__menu.active {
+        display: flex;
+    }
+
+    .navbar__list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar__sub-list {
+        position: static;
+        background: none;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar__button {
+        margin-top: 10px;
+    }
+}

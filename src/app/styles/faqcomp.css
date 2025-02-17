@@ -1,0 +1,49 @@
+.faqcomp {
+  background-color: #0A0118;
+  background-image: url(/images/faq/faq-bg1.png);
+  margin: 100px 0;
+  border-radius: 15px;
+  border: 1px solid var(--border-light-color);
+}
+
+.faqcomp-blok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-image: url(/images/faq/faq-bg2.png);
+  background-position: top center;
+  background-size: cover;
+  padding: 50px 30px;
+}
+
+.faqcomp-blok h1 {
+  color: #fff;
+  font-size: 220%;
+  max-width: 650px;
+  text-align: center;
+}
+
+.faqcomp-blok p {
+  font-family: var(--p-ff);
+  color: var(--text-color);
+  line-height: 1.5;
+  letter-spacing: 1px;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faqcomp-blok button {}
+
+@media (max-width: 768px) {
+  .faqcomp-blok h1 {
+    font-size: 24px;
+  }
+  .faqcomp-blok p {
+    font-size: 14px;
+  }
+  .faqcomp-blok button {
+    font-size: 11px;
+  }
+}

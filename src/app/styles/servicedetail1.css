@@ -1,0 +1,130 @@
+.servicedet-1 {
+    background-image:
+        radial-gradient(at top center, #0A0118 10%, #0A0118CC 100%),
+        url(/images/pagename-bg2.png);
+    border-bottom: 1px solid var(--border-light-color);
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    height: 80vh;
+    margin-bottom: 100px;
+}
+
+.servicedet-1-blok {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 100px;
+}
+
+.servicedet-1-blok__section {
+    display: flex;
+    flex-direction: column;
+}
+
+.servicedet-1-blok__section-1 {
+    background-image:
+        radial-gradient(at center center, #0A011880 0%, #0A011833 100%),
+        url(/images/pagename-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    padding-top: 200px;
+}
+
+.servicedet-1__p-1 {
+    font-weight: 600;
+    color: var(--purple-color);
+    font-size: 95%;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.servicedet-1-blok__section h1 {
+    font-size: 230%;
+    color: #fff;
+    max-width: 550px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.servicedet-1__p-2 {
+    margin-bottom: 20px;
+    font-family: var(--p-ff);
+    color: var(--text-color);
+    line-height: 1.5;
+    max-width: 550px;
+}
+
+.servicedet-1-blok__section button {
+    width: 200px;
+}
+
+.servicedet-1-blok__section img {
+    padding-top: 60px;
+    width: 90%;
+}
+
+@media (max-width: 1300px) {
+    .servicedet-1-blok {
+        background-image:
+            radial-gradient(at center center, #0A011880 0%, #0A011833 100%),
+            url(/images/pagename-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    .servicedet-1-blok__section-1 {
+        background: none;
+    }
+
+
+    .servicedet-1-blok__section img {
+        padding-top: 150px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicedet-1 {
+        height: 100%;
+    }
+
+    .servicedet-1-blok {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .servicedet-1-blok__section-2 {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .servicedet-1-blok__section img {
+        padding-top: 0;
+        width: 70%;
+    }
+
+    .servicedet-1__p-1 {
+        font-size: 12px;
+    }
+
+    .servicedet-1-blok__section h1 {
+        font-size: 24px;
+    }
+
+    .servicedet-1__p-1 {
+        font-size: 14px;
+    }
+
+    .servicedet-1-blok__section button {
+        font-size: 11px;
+    }
+
+    .servicedet-1 {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        padding-bottom: 20px;
+    }
+}

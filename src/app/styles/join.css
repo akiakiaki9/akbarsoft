@@ -1,0 +1,138 @@
+.join {
+    height: 40vh;
+    margin-top: 50px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-blok {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.join-blok__p-1 {
+    color: var(--purple-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 95%;
+}
+
+.join-blok__p-2 {
+    font-family: var(--p-ff);
+    color: var(--text-color);
+    line-height: 1.5;
+    text-align: center;
+}
+
+.join-blok h1 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 220%;
+}
+
+.grad-button:hover {
+    opacity: 0.8;
+}
+
+.join-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.join-modal-content {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-light-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.join-modal-content button:hover {
+    opacity: 0.8;
+}
+
+.join-modal-content p {
+    text-align: start;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.join-modal-content__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.join__close {
+    width: 30px;
+    height: 30px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.join__close:hover {
+    color: var(--purple-color);
+}
+
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.join-form button {
+    width: 100%;
+}
+
+.join-form input,
+.join-form textarea {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-light-color);
+    resize: none;
+    outline: none;
+}
+
+.join-form textarea {
+    min-height: 150px;
+}
+
+
+@media (max-width: 768px) {
+    .join-blok__p-1 {
+        font-size: 12px;
+    }
+
+    .join-blok__p-2 {
+        font-size: 14px;
+    }
+
+    .join-blok h1 {
+        font-size: 24px;
+    }
+
+    .join-blok button {
+        font-size: 11px;
+    }
+
+    .join-modal-content {
+        width: 90%;
+    }
+}

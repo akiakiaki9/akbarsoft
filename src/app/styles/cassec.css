@@ -1,0 +1,62 @@
+.cassec {
+    background-image: linear-gradient(135deg, #0a01185f 0%, #0A0316 100%), url(/images/cases/cases-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.cassec-blok {
+    background-image: linear-gradient(180deg, #2B2338 0%, #0A011866 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 50px 40px;
+    border-radius: 15px;
+    border: 1px solid var(--border-light-color);
+    max-width: 700px;
+    position: absolute;
+    left: 100px;
+    bottom: -100px;
+}
+
+.cassec-blok h1 {
+    margin-bottom: 20px;
+    font-size: 250%;
+    color: #fff;
+    max-width: 600px;
+}
+
+.cassec-blok p {
+    margin-bottom: 25px;
+    font-family: var(--p-ff);
+    color: var(--text-color);
+    line-height: 1.5;
+    max-width: 550px;
+}
+
+@media (max-width: 768px) {
+    .cassec {
+        height: 40vh;
+    }
+
+    .cassec-blok {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 30px 25px;
+    }
+
+    .cassec-blok h1 {
+        font-size: 24px;
+    }
+
+    .cassec-blok p {
+        font-size: 14px;
+    }
+
+    .cassec-blok button {
+        font-size: 11px;
+    }
+}

@@ -1,7 +1,8 @@
-import React from 'react';
-import ContactsComp from './ContactsComp';
-import Footer from '../components/footer/footer';
-import Navbar from '../components/navbar/navbar';
+"use client"
+import React from 'react'
+import Contacts from './Contacts'
+import Footer from '../components/footer/Footer'
+import Navbar from '../components/navbar/Navbar'
 
 export const metadata = {
     title: 'Контакты Akbar Soft — свяжитесь с нами сегодня',
@@ -23,12 +24,20 @@ export const metadata = {
     },
 };
 
-export default function Contacts() {
+export default function page() {
     return (
-        <>
+        <div>
             <Navbar />
-            <ContactsComp />
+            <div className='pagename'>
+                <div className='pagename__container'>
+                    <div className='pagename-blok'>
+                        <h1>Contact us</h1>
+                        <p>Start the conversation to established good relationship and business.</p>
+                    </div>
+                </div>
+            </div>
+            <Contacts />
             <Footer />
-        </>
-    );
-}
+        </div>
+    )
+};

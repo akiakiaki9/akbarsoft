@@ -1,12 +1,31 @@
-import './styles/styles.css';
-import './styles/header.css';
-import './styles/footer.css';
-import './styles/services.css';
-import './styles/contacts.css';
-import './styles/title.css';
-import './styles/navbar.css';
-import './styles/projects.css';
-import Script from 'next/script';
+import './styles/styles.css'
+import './styles/header.css'
+import './styles/section.css'
+import './styles/section2.css'
+import './styles/section3.css'
+import './styles/section4.css'
+import './styles/section5.css'
+import './styles/section6.css'
+import './styles/section7.css'
+import './styles/offers.css'
+import './styles/title.css'
+import './styles/carousel.css'
+import './styles/footer.css'
+import './styles/pagename.css'
+import './styles/team.css'
+import './styles/contacts.css'
+import './styles/navbar.css'
+import './styles/pricing.css'
+import './styles/cases.css'
+import './styles/cassec.css'
+import './styles/servicedetail1.css'
+import './styles/servicedetail2.css'
+import './styles/services.css'
+import './styles/404.css'
+import './styles/join.css'
+import './styles/faq.css'
+import './styles/faqcomp.css'
+import Script from 'next/script'
 
 export const metadata = {
   title: "Akbar Soft",
@@ -32,9 +51,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <meta name="yandex-verification" content="f201683b2288240d" />
-      <meta name="msvalidate.01" content="9727FEB9B9A0FBF3F14C214D959E9BB5" />
-        <link rel="icon" href="/images/akbarsoftfinal.PNG" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="yandex-verification" content="f201683b2288240d" />
+        <meta name="msvalidate.01" content="9727FEB9B9A0FBF3F14C214D959E9BB5" />
+        <link rel="icon" href="/images/logo-website.png" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TVGXYSNSY9"
           strategy="afterInteractive"
@@ -51,7 +71,9 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   );
 };

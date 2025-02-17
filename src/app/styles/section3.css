@@ -1,0 +1,213 @@
+.section3 {
+    background-image: linear-gradient(180deg, #0A011880 0%, #0F0520 100%), url(/images/section3/section3-bg.jpg);
+    margin-bottom: 100px;
+}
+
+.section3-blok {
+    display: flex;
+    gap: 30px;
+}
+
+.section3-blok__section-1 {
+    background-image: linear-gradient(135deg, #0A011899 0%, #0A0316 100%), url(/images/section3/section3.jpg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.section3-blok__section-1__absolute {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    padding: 30px;
+}
+
+.section3-blok__section-1 h1 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section3-blok__section-1__p1 {
+    color: var(--purple-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 95%;
+    margin-bottom: 30px;
+}
+
+.section3-blok__section-1__p2 {
+    font-family: var(--p-ff);
+    color: var(--text-color);
+    line-height: 1.5;
+    letter-spacing: 1px;
+    max-width: 750px;
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section3__absolute-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    background-image: linear-gradient(135deg, var(--violet-color) 0%, var(--purple-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.section3__icon-1 {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    transition: .5s;
+}
+
+.section3__absolute-1:hover .section3__icon-1 {
+    transform: rotate(360deg);
+}
+
+.section3-blok__section-2 h1 {
+    font-weight: 300;
+    font-size: 150%;
+}
+
+.section3-blok__section-2__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section3-blok__section-2__container-part-1 {
+    background-color: var(--violet-color);
+    color: #fff;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.section3-blok__section-2__container__p-1 {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+
+.section3-blok__section-2__container__p-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 350px;
+}
+
+.section3-blok__section-2__container-part-2 {
+    background-color: var(--purple-color);
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.section3__absolute-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    background-color: #2B2338;
+    border: 3px solid #FFFFFF2B;
+    border-radius: 50%;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.section3__icon-2 {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    transition: .5s;
+}
+
+.section3__absolute-2:hover .section3__icon-2 {
+    transform: rotate(360deg);
+}
+
+@media (max-width: 1110px) {
+    .section3-blok {
+        flex-direction: column;
+    }
+    
+    .section3-blok__section-2__container__p-2 {
+        max-width: 700px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section3-blok__section-1__absolute {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+        padding: 30px;
+    }
+
+    .section3-blok__section-1__absolute button {
+        font-size: 11px;
+    }
+    
+    .section3-blok__section-1 h1 {
+        font-size: 24px;
+    }
+    
+    .section3-blok__section-1__p1 {
+        font-size: 12px;
+    }
+    
+    .section3-blok__section-1__p2 {
+        font-size: 14px;
+    }
+    
+    .section3__absolute-1 {
+        padding: 15px;
+    }
+    
+    .section3__icon-1 {
+        width: 20px;
+        height: 20px;
+    }
+
+    .section3-blok__section-2 h1 {
+        font-weight: 300;
+        font-size: 150%;
+    }
+    
+    .section3-blok__section-2__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .section3-blok__section-2__container__p-1 {
+        font-size: 12px;
+    }
+    
+    .section3-blok__section-2__container__p-2 {
+        font-size: 14px;
+    }
+    
+    .section3__icon-2 {
+        width: 20px;
+        height: 20px;
+    }
+}
