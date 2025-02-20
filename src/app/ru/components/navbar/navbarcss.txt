@@ -65,13 +65,9 @@
     margin-top: 5px;
     width: 20px;
     height: 20px;
-    transition: transform 0.3s;
 }
 
-.navbar__arrow.open {
-    transform: rotate(180deg);
-}
-
+/* Стили для выпадающего меню */
 .navbar__sub-list {
     list-style: none;
     position: absolute;
@@ -104,6 +100,7 @@
     color: var(--purple-color);
 }
 
+/* Кнопка */
 .navbar__button {
     background-image: linear-gradient(120deg, var(--violet-color) 20%, var(--purple-color) 60%);
     border: none;
@@ -123,23 +120,13 @@
     background-image: linear-gradient(120deg, var(--purple-color) 20%, var(--violet-color) 60%);
 }
 
+/* 📱 Мобильная версия */
 .burger {
     display: none;
     cursor: pointer;
 }
 
-.navbar__lang-1 {
-    display: none;
-}
-
 @media screen and (max-width: 768px) {
-    .navbar__lang-2 {
-        display: none;
-    }
-    .navbar__lang-1 {
-        display: block;
-    }
-    
     .burger {
         display: block;
     }
