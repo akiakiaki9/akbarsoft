@@ -526,10 +526,12 @@ const resources = {
     }
 };
 
+const savedLanguage = typeof window !== "undefined" ? localStorage.getItem("language") : null;
+
 i18n.use(initReactI18next).init({
     resources,
     fallbackLng: "en",
-    lng: localStorage.getItem("language") || "en",
+    lng: savedLanguage || "en", // Используем сохраненный язык или "en"
     interpolation: { escapeValue: false }
 });
 
