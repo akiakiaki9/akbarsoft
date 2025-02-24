@@ -53,7 +53,7 @@ const resources = {
             },
             offers: {
                 "1": "What we offer",
-                "1": "Where Strategy Meets Digital. Your Success Story Begins with Digimax.",
+                "2": "Where Strategy Meets Digital. Your Success Story Begins with Digimax.",
                 "3": "LEARN MORE",
                 "item_1": "Website Development",
                 "item_2": "We create fast, secure, and highly responsive websites tailored to your business needs",
