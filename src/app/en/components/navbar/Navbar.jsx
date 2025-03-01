@@ -60,7 +60,7 @@ export default function Navbar() {
                             </li>
                             <li className="navbar__item">
                                 <Link href="/en/about-us" onClick={toggleMobileMenu} style={{ color: activePage === '/en/about-us' ? 'var(--purple-color)' : '' }}>
-                                {t("navbar.item_2")}
+                                    {t("navbar.item_2")}
                                 </Link>
                             </li>
                             <li className="navbar__item">
@@ -81,17 +81,17 @@ export default function Navbar() {
                                     <ul className="navbar__sub-list">
                                         <li>
                                             <Link href="/en/services" onClick={toggleMobileMenu} style={{ color: activePage === '/en/services' ? 'var(--purple-color)' : '' }}>
-                                            {t("navbar.item_3")}
+                                                {t("navbar.item_3")}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/en/pricing-plan" onClick={toggleMobileMenu} style={{ color: activePage === '/en/pricing-plan' ? 'var(--purple-color)' : '' }}>
-                                            {t("navbar.item_4")}
+                                                {t("navbar.item_4")}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/en/services/detail" onClick={toggleMobileMenu} style={{ color: activePage === '/en/services/detail' ? 'var(--purple-color)' : '' }}>
-                                            {t("navbar.item_5")}
+                                                {t("navbar.item_5")}
                                             </Link>
                                         </li>
                                     </ul>
@@ -99,12 +99,12 @@ export default function Navbar() {
                             </li>
                             <li className="navbar__item">
                                 <Link href="/en/cases" onClick={toggleMobileMenu} style={{ color: activePage === '/en/cases' ? 'var(--purple-color)' : '' }}>
-                                {t("navbar.item_6")}
+                                    {t("navbar.item_6")}
                                 </Link>
                             </li>
                             <li className="navbar__item">
                                 <Link href="/en/contacts" onClick={toggleMobileMenu} style={{ color: activePage === '/en/contacts' ? 'var(--purple-color)' : '' }}>
-                                {t("navbar.item_7")}
+                                    {t("navbar.item_7")}
                                 </Link>
                             </li>
                             <li className="navbar__item">
@@ -125,12 +125,12 @@ export default function Navbar() {
                                     <ul className="navbar__sub-list">
                                         <li>
                                             <Link href="/en/team" onClick={toggleMobileMenu} style={{ color: activePage === '/en/team' ? 'var(--purple-color)' : '' }}>
-                                            {t("navbar.item_9")}
+                                                {t("navbar.item_9")}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/en/faq" onClick={toggleMobileMenu} style={{ color: activePage === '/en/faq' ? 'var(--purple-color)' : '' }}>
-                                            {t("navbar.item_10")}
+                                                {t("navbar.item_10")}
                                             </Link>
                                         </li>
                                     </ul>
@@ -138,9 +138,9 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <div className="navbar__lang-2"><LanguageSwitcher /></div>
-                        <button className="navbar__button">
-                            <Link href="/en/pricing-plan" onClick={toggleMobileMenu}>{t("navbar.item_11")}</Link>
-                        </button>
+                        <Link className='navbar__button-a' href="/en/pricing-plan" onClick={toggleMobileMenu}>
+                            <button className="navbar__button">{t("navbar.item_11")}</button>
+                        </Link>
                     </nav>
                 </div>
             </div>

@@ -86,10 +86,10 @@ export default function Contacts() {
                                         {t("contacts.item_1.5")}
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            support@yourdomain.tld
+                                            akbarsoftfreelance@gmail.com
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            hello@yourdomain.tld
+                                            akbarsoftcompany@gmail.com
                                         </p>
                                     </div>
                                 </div>
@@ -124,10 +124,10 @@ export default function Contacts() {
                                         {t("contacts.item_1.7")}
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Monday - Friday
+                                            Monday - Saturday
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            07am - 09pm
+                                            10am - 11pm
                                         </p>
                                     </div>
                                 </div>

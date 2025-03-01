@@ -2,21 +2,21 @@ import Script from 'next/script'
 
 export const metadata = {
   title: "Akbar Soft",
-  description: "Your path to digital excellence",
-  keywords: "Freelance, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Bukhara, Bukhara IT company, IT company, Akbar Soft IT company, Freelance, IT company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Bukhara, Bukhara IT company, IT company, Akbar Soft IT company",
+  description: "Website development, online stores, and more",
+  keywords: "Freelance, websites, create a website, sayt taxlash, sayt zakaz, website, create a website, website development, online store development, order a website, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Freelance, IT company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Bukhara, Bukhara IT company, IT company, akbar soft IT company",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/",
   openGraph: {
     title: "Akbar Soft - Freelance Team",
-    description: "We develop various websites for your business. Contact us to learn more.",
+    description: "We develop websites for your business. Contact us to learn more.",
     url: "https://akbarsoft.uz/",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akbar Soft - IT Solutions for Your Business",
-    description: "Discover freelance IT services to grow your business with the Akbar Soft team.",
+    title: "Akbar Soft",
+    description: "Website development, online stores, and more",
   },
 };
 
