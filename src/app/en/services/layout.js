@@ -1,20 +1,20 @@
 export const metadata = {
-    title: 'Услуги Akbar Soft — профессиональная разработка и IT-решения',
-    description: 'Ознакомьтесь с услугами Akbar Soft. Мы предлагаем качественные IT-решения и веб-разработку.',
-    keywords: 'Akbar Soft, услуги, разработка, Web, IT, веб сайт, веб-разработка, Бухара, Bukhara',
+    title: 'What does Akbar Soft offer?',
+    description: 'Check out Akbar Soft services. We offer quality websites, web designs, etc.',
+    keywords: 'Akbar Soft, services, development, Web, IT, website, web development, Bukhara, Bukhara, order a website, order a website',
     robots: 'index, follow',
     canonical: 'https://akbarsoft.uz/services',
     openGraph: {
-        title: 'Услуги Akbar Soft',
-        description: 'Профессиональные IT-решения и веб-разработка от Akbar Soft. Свяжитесь с нами сегодня!',
+        title: 'What does Akbar Soft offer?',
+        description: 'Check out Akbar Soft services. We offer quality websites, web designs, etc.',
         url: 'https://akbarsoft.uz/services',
         type: 'website',
         locale: 'en_US',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Услуги Akbar Soft',
-        description: 'Профессиональные IT-решения и веб-разработка от Akbar Soft. Свяжитесь с нами сегодня!',
+        title: 'What does Akbar Soft offer?',
+        description: 'Check out Akbar Soft services. We offer quality websites, web designs, etc.',
     },
 };
 

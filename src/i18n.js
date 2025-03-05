@@ -53,18 +53,18 @@ const resources = {
             },
             offers: {
                 "1": "What we offer",
-                "2": "Where Strategy Meets Digital. Your Success Story Begins with Digimax.",
+                "2": "Strategy and digital technologies for your success.",
                 "3": "LEARN MORE",
                 "item_1": "Website Development",
                 "item_2": "We create fast, secure, and highly responsive websites tailored to your business needs",
                 "item_3": "Web Design",
                 "item_4": "Stunning, user-friendly, and modern designs that enhance engagement and boost conversions.",
-                "item_5": "Search Engine Optimization",
-                "item_6": "Improve your website’s ranking, visibility, and performance with our expert SEO strategies.",
+                "item_5": "Hosting and domain connection",  
+                "item_6": "We set up hosting and connect a domain for stable website performance."
             },
             section5: {
-                "1": "Experience the magic of Akbar Soft. Contact us to discuss your project.",
-                "2": "Transform your vision into reality with Akbar Soft. We combine innovation, strategy, and cutting-edge technology to deliver exceptional digital solutions. Reach out and let's build something great together!",
+                "1": "Contact Akbar Soft and bring your project to life.",  
+                "2": "We turn ideas into modern digital solutions. Let's create together!",
                 "3": "Web Development",
                 "4": "Web Design",
                 "5": "Search Engine Optimization",
@@ -124,17 +124,17 @@ const resources = {
             },
             services: {
                 "pagename_1": "Services",
-                "pagename_2": "Beyond Pixels, Beyond Expectations: Digimax, Where Ideas Soar.",
-                "1": "Pioneering Digital Excellence: Discover the Digimax Advantage",
-                "2": "At Akbar Soft, we craft innovative websites, software, and digital strategies to bring your vision to life.",
-                "3": "Expertise in Digital Solutions",
-                "4": "Innovative Design Approach",
-                "5": "Result-Driven Digital Marketing",
-                "6": "AI-Powered Insights",
-                "7": "Robust Cybersecurity Solutions",
-                "8": "Tailored Digital Strategy",
-                "9": "Responsive & Scalable",
-                "10": "Proven Track Record",
+                "pagename_2": "With Akbar Soft, innovation becomes reality.",
+                "1": "Discover the possibilities of Akbar Soft",
+                "2": "We develop websites and web designs.",
+                "3": "We help with digital solutions.",
+                "4": "We create modern and user-friendly designs.",
+                "5": "We help promote your business online.",
+                "6": "We set up hosting and connect domains.",
+                "7": "We create turnkey websites.",
+                "8": "We develop strategies tailored to you.",
+                "9": "We make responsive layouts for all devices.",
+                "10": "We achieve real and proven results."
             },
             pricingplan: {
                 "pagename_1": "Pricing plan",
@@ -222,7 +222,7 @@ const resources = {
                     "5": "Email Support",
                     "6": "Let's Talk",
                     "7": "Working Hours",
-                    "8": "Follow our social media",
+                    "8": "We are on social networks",
                 },
                 "item_2": {
                     "1": "Send us a message",
@@ -314,18 +314,18 @@ const resources = {
             },
             offers: {
                 "1": "Что мы предлагаем",
-                "2": "Где стратегия встречает цифровой мир. Ваша история успеха начинается здесь.",
+                "2": "Стратегия и цифровые технологии для вашего успеха.",
                 "3": "УЗНАТЬ БОЛЬШЕ",
                 "item_1": "Разработка сайтов",
                 "item_2": "Создаем быстрые, безопасные и адаптивные сайты для вашего бизнеса.",
                 "item_3": "Веб-дизайн",
                 "item_4": "Современный и удобный дизайн для повышения вовлеченности и конверсий.",
-                "item_5": "SEO-продвижение",
-                "item_6": "Оптимизируем сайт для роста позиций в поисковых системах."
+                "item_5": "Хостинг и подключение домена",  
+                "item_6": "Настроим хостинг и подключим домен для стабильной работы сайта."
             },
             section5: {
-                "1": "Испытайте магию Akbar Soft. Свяжитесь с нами для обсуждения проекта.",
-                "2": "Превратите свою идею в реальность с Akbar Soft. Мы соединяем инновации, стратегию и передовые технологии для выдающихся решений. Давайте создадим что-то великое вместе!",
+                "1": "Свяжитесь с Akbar Soft и воплотите свой проект в жизнь.",  
+                "2": "Мы превращаем идеи в современные цифровые решения. Давайте создавать вместе!",
                 "3": "Веб-разработка",
                 "4": "Веб-дизайн",
                 "5": "SEO-продвижение"
@@ -385,17 +385,17 @@ const resources = {
             },
             services: {
                 "pagename_1": "Услуги",
-                "pagename_2": "Выше ожиданий: инновации с Akbar Soft.",
+                "pagename_2": "С Akbar Soft инновации становятся реальностью.",
                 "1": "Откройте возможности Akbar Soft",
-                "2": "Мы создаем сайты, программное обеспечение и цифровые стратегии.",
-                "3": "Экспертиза в цифровых решениях",
-                "4": "Инновационный дизайн",
-                "5": "Эффективный маркетинг",
-                "6": "Аналитика на основе ИИ",
-                "7": "Кибербезопасность",
-                "8": "Персонализированная стратегия",
-                "9": "Адаптивные и масштабируемые решения",
-                "10": "Проверенные результаты"
+                "2": "Мы разрабатываем веб-сайты и веб-дизайны.",
+                "3": "Помогаем с цифровыми решениями.",
+                "4": "Делаем современный и удобный дизайн.",
+                "5": "Помогаем продвигать ваш бизнес в интернете.",
+                "6": "Настраиваем хостинг и подключаем домен.",
+                "7": "Создаем сайты под ключ.",
+                "8": "Разрабатываем стратегии, подходящие именно вам.",
+                "9": "Делаем адаптивную верстку для всех устройств.",
+                "10": "Достигаем реальных и проверенных результатов."
             },
             pricingplan: {
                 "pagename_1": "План цен",
@@ -480,10 +480,10 @@ const resources = {
                     "2": "Бесшовная коммуникация, глобальное влияние.",
                     "3": "Свяжитесь с нами, чтобы исследовать инновационные решения, повысить ваш цифровой след и превратить идеи в реальность.",
                     "4": "Главный офис",
-                    "5": "Поддержка по электронной почте",
-                    "6": "Давайте поговорим",
+                    "5": "Наша электронной почта",
+                    "6": "Телефон номер",
                     "7": "Рабочие часы",
-                    "8": "Следите за нами в соц сетях"
+                    "8": "Мы в социальных сетях"
                 },
                 "item_2": {
                     "1": "Отправьте нам сообщение",

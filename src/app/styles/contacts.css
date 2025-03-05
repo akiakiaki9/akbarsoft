@@ -124,17 +124,18 @@
     align-items: center;
 }
 
-.contacts-blok__section-1__footer__icon {
+.footer-blok__section-1__icon {
     color: var(--bg-color);
     width: 20px;
     height: 20px;
+    transition: .5s;
 }
 
-.contacts-blok__section-1__footer__container a:hover {
+.contacts-blok__section-1__footer__container-a:hover {
     background-color: var(--bg-color);
 }
 
-.contacts-blok__section-1__footer__container a:hover .contacts-blok__section-1__footer__icon {
+.contacts-blok__section-1__footer__container-a:hover .footer-blok__section-1__icon {
     color: #fff;
 }
 

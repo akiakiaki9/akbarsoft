@@ -136,10 +136,18 @@ export default function Contacts() {
                         <div className="contacts-blok__section-1__footer">
                             <h2>{t("contacts.item_1.8")}</h2>
                             <div className="contacts-blok__section-1__footer__container">
-                                <a href="https://www.facebook.com/share/18XvQozToa/?mibextid=wwXIfr"><FaFacebookF className='footer-blok__section-1__icon' /></a>
-                                <a href="https://www.instagram.com/akbarsoftuz/?utm_source=ig_web_button_share_sheet"><FaInstagram className='footer-blok__section-1__icon' /></a>
-                                <a href="https://t.me/akbar_soft"><FaTelegramPlane className='footer-blok__section-1__icon' /></a>
-                                <a href=""><FaXTwitter className='contacts-blok__section-1__footer__icon' /></a>
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.facebook.com/share/18XvQozToa/?mibextid=wwXIfr">
+                                    <FaFacebookF className='footer-blok__section-1__icon' />
+                                </a>
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/akbarsoftuz/?utm_source=ig_web_button_share_sheet">
+                                    <FaInstagram className='footer-blok__section-1__icon' />
+                                </a>
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft">
+                                    <FaTelegramPlane className='footer-blok__section-1__icon' />
+                                </a>
+                                <a className='contacts-blok__section-1__footer__container-a' href="">
+                                    <FaXTwitter className='footer-blok__section-1__icon' />
+                                </a>
                             </div>
                         </div>
                     </div>

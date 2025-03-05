@@ -3,56 +3,20 @@
     <!-- Главная страница -->
     <url>
         <loc>https://akbarsoft.uz/ru</loc>
-        <lastmod>2025-11-11</lastmod>
+        <lastmod>2025-05-03</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://akbarsoft.uz/ru/services</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-05-03</lastmod>
+        <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://akbarsoft.uz/ru/services</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/ru/cases</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/ru/cases</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/en/pricing-plan</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://akbarsoft.uz/ru/contacts</loc>
+        <lastmod>2025-05-03</lastmod>
+        <changefreq>daily</changefreq>
         <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/ru/pricing-plan</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/en/contact-us</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/ru/contact-us</loc>
-        <lastmod>2025-02-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
     </url>
 </urlset>
