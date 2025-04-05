@@ -39,7 +39,6 @@ export default function Footer() {
                         </div>
                         <div className="footer-blok__section-2__part">
                             <p className='footer-blok__section-2__part__p-1'>{t("footer.item_8")}</p>
-                            <Link href='/en/about-us'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_9")}</p></Link>
                             <Link href='/en/team'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_10")}</p></Link>
                             <Link href='/en/cases'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_11")}</p></Link>
                         </div>

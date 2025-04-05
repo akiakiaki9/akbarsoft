@@ -59,11 +59,6 @@ export default function Navbar() {
                                 </Link>
                             </li>
                             <li className="navbar__item">
-                                <Link href="/ru/about-us" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/about-us' ? 'var(--purple-color)' : '' }}>
-                                    {t("navbar.item_2")}
-                                </Link>
-                            </li>
-                            <li className="navbar__item">
                                 <Link href='ru//services' className="dropdown-toggle"
                                     onClick={(e) => {
                                         if (isMobile) {
