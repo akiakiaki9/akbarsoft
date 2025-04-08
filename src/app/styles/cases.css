@@ -69,7 +69,7 @@
 
 .cases-blok__image {
     width: 400px;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
     display: block;
 }
@@ -142,6 +142,7 @@
 
     .cases-blok__image {
         width: 100%;
+        height: 300px;
     }
 
     .cases-blok__section__container__main {
