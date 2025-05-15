@@ -68,10 +68,10 @@ export default function Contacts() {
                                             {t("contacts.item_1.4")}
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Jln Cempaka Wangi No
+                                            Узбекистан
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            22Jakarta - Indonesia
+                                            Бухара - центр
                                         </p>
                                     </div>
                                 </div>
