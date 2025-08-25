@@ -3,7 +3,6 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
 import Offers from "./components/offers/Offers";
-import Section from "./components/section/Section";
 import Section2 from "./components/section/Section2";
 import Section3 from "./components/section/Section3";
 import Section4 from "./components/section/Section4";
@@ -17,7 +16,6 @@ export default function Home() {
     <div>
       <Navbar />
       <Header />
-      <Section />
       <Section2 />
       <Section3 />
       <Section4 />
