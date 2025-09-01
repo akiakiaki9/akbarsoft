@@ -12,13 +12,13 @@ export default function page() {
             <Navbar />
             <Cases />
             <div className='cassec'>
-                <div className='cassec-blok'>
+                {/* <div className='cassec-blok'>
                     <h1>{t("cases.3")}</h1>
                     <p>{t("cases.4")}</p>
                     <button className='grad-button'>{t("cases.5")}</button>
-                </div>
+                </div> */}
             </div>
             <Footer />
         </div>
     )
-};
+};  

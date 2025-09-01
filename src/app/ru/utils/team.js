@@ -2,7 +2,7 @@ const TEAM = [
     {
         id: 1,
         image: '/images/avatar-ceo.png',
-        name: 'Akbar Tillayev',
+        name: 'Akbar',  
         role: 'Founder'
     },
     {

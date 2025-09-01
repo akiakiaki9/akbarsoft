@@ -17,8 +17,8 @@ export default function Header() {
                     {t("header.3")}
                 </p>
                 <div className="header-blok__container">
-                    <Link href='/ru/pricing-plan'><button className='grad-button'>{t("header.4")}</button></Link>
-                    <Link href='/ru/services'><button className='header-blok__container__button-2'>{t("header.5")}</button></Link>
+                    <Link href='/ru/services'><button className='grad-button'>{t("header.4")}</button></Link>
+                    <Link href='/ru/contacts'><button className='header-blok__container__button-2'>{t("header.5")}</button></Link>
                 </div>
             </div>
         </div>
