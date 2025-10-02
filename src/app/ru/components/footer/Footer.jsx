@@ -34,7 +34,7 @@ export default function Footer() {
                         </div>
                         <div className="footer-blok__section-2__part">
                             <p className='footer-blok__section-2__part__p-1'>{t("footer.item_5")}</p>
-                            <Link href='/ru/faq'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_6")}</p></Link>
+                            <Link href='/ru/#faq'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_6")}</p></Link>
                             <Link href='/ru/contacts'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_7")}</p></Link>
                         </div>
                         <div className="footer-blok__section-2__part">

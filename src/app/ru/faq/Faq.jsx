@@ -32,7 +32,7 @@ export default function Faq() {
     ];
 
     return (
-        <div className='faq'>
+        <div className='faq' id="faq">
             <div className="main">
                 <div className="faq-blok">
                     <div className="faq-blok__section-1">

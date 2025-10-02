@@ -27,12 +27,6 @@ export default function Offers() {
     ];
     return (
         <div className='offers'>
-            <div className='title'>
-                <div className="title-blok">
-                    <p>{t("offers.1")}</p>
-                    <h1>{t("offers.2")}</h1>
-                </div>
-            </div>
             <div className="main">
                 <div className="offers-blok">
                     {OFFERS.map(item => (

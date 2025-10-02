@@ -122,20 +122,6 @@ const resources = {
                 "6": "CONTACT US",
                 "7": "Leave your details, and we will get back to you soon!"
             },
-            services: {
-                "pagename_1": "Services",
-                "pagename_2": "With Akbar Soft, innovation becomes reality.",
-                "1": "Discover the possibilities of Akbar Soft",
-                "2": "We develop websites and web designs.",
-                "3": "We help with digital solutions.",
-                "4": "We create modern and user-friendly designs.",
-                "5": "We help promote your business online.",
-                "6": "We set up hosting and connect domains.",
-                "7": "We create turnkey websites.",
-                "8": "We develop strategies tailored to you.",
-                "9": "We make responsive layouts for all devices.",
-                "10": "We achieve real and proven results."
-            },
             pricingplan: {
                 "pagename_1": "Pricing plan",
                 "pagename_2": "Predictable Pricing. No Surprises.",
@@ -173,34 +159,6 @@ const resources = {
                     "8": "User account system",
                     "9": "PURCHASE ORDER",
                 },
-            },
-            detailservice: {
-                "item_1": {
-                    "1": "Website Development",
-                    "2": "Delivering IT solutions that enable you to work smarter.",
-                    "3": "Crafting seamless, high-performance websites with intuitive design, robust functionality, and cutting-edge technology to enhance user experience and business growth.",
-                    "4": "DISCOVER MORE"
-                },
-                "item_2": {
-                    "1": "Descriptions",
-                    "2": "We craft tailored digital solutions that drive innovation, efficiency, and business success. Our expertise ensures seamless user experiences, advanced security, and data-driven strategies for sustainable growth.",
-                    "3": "We believe in delivering cutting-edge technology with a focus on scalability, responsiveness, and impactful results. Let’s build a future where your digital presence stands out and thrives.",
-                    "4": "Expertise in Digital Solutions",
-                    "5": "Innovative Design Approach",
-                    "6": "Strategic Digital Marketing",
-                    "7": "Data-Driven Decisions",
-                    "8": "Robust Security Measures",
-                    "9": "Tailored Digital Strategiesy",
-                    "10": "Scalable & Responsive Solutions",
-                    "11": "Proven Success & Reliability",
-                    "12": "Feature",
-                    "13": "UI/UX User Friendly",
-                    "14": "Focus on Target",
-                    "15": "Secure App",
-                    "16": "User Experience Flow",
-                    "17": "Awesome Graphics Design",
-                    "18": "Download Brochure",
-                }
             },
             cases: {
                 "pagename_1": "Our Cases",
@@ -271,10 +229,10 @@ const resources = {
                 "item_3": "Услуги",
                 "item_4": "Тарифные планы",
                 "item_5": "Детали услуги",
-                "item_6": "Наши проекты",
+                "item_6": "Проекты",
                 "item_7": "Контакты",
                 "item_8": "Прочее",
-                "item_9": "Команда",
+                "item_9": "Цены",
                 "item_10": "FAQ",
                 "item_11": "ЗАКАЗ"
             },
@@ -383,20 +341,6 @@ const resources = {
                 "6": "СВЯЗАТЬСЯ С НАМИ",
                 "7": "Оставьте свои данные, свяжемся с вами в ближайшее время!"
             },
-            services: {
-                "pagename_1": "Услуги",
-                "pagename_2": "С Akbar Soft инновации становятся реальностью.",
-                "1": "Откройте возможности Akbar Soft",
-                "2": "Мы разрабатываем веб-сайты и веб-дизайны.",
-                "3": "Помогаем с цифровыми решениями.",
-                "4": "Делаем современный и удобный дизайн.",
-                "5": "Помогаем продвигать ваш бизнес в интернете.",
-                "6": "Настраиваем хостинг и подключаем домен.",
-                "7": "Создаем сайты под ключ.",
-                "8": "Разрабатываем стратегии, подходящие именно вам.",
-                "9": "Делаем адаптивную верстку для всех устройств.",
-                "10": "Достигаем реальных и проверенных результатов."
-            },
             pricingplan: {
                 "pagename_1": "Наши цены",
                 "pagename_2": "Самые низкие цены в СНГ!",
@@ -433,34 +377,6 @@ const resources = {
                     "7": "Поднимем в поиска по вашему городу",
                     "8": "Увеличим число звонков и заявок",
                     "9": "ПОЛУЧИТЬ КЛИЕНТОВ ИЗ КАРТ"
-                }
-            },
-            detailservice: {
-                "item_1": {
-                    "1": "Разработка сайтов",
-                    "2": "Предоставление IT-решений для более умной работы.",
-                    "3": "Создание бесшовных, высокопроизводительных сайтов с интуитивно понятным дизайном, надежной функциональностью и передовыми технологиями для улучшения пользовательского опыта и роста бизнеса.",
-                    "4": "УЗНАТЬ БОЛЬШЕ"
-                },
-                "item_2": {
-                    "1": "Описание",
-                    "2": "Мы разрабатываем индивидуальные цифровые решения, которые стимулируют инновации, эффективность и успех бизнеса. Наш опыт обеспечивает бесшовный пользовательский опыт, высокий уровень безопасности и стратегии, основанные на данных, для устойчивого роста.",
-                    "3": "Мы верим в предоставление передовых технологий с акцентом на масштабируемость, адаптивность и эффективные результаты. Давайте создадим будущее, в котором ваш цифровой след будет выделяться и процветать.",
-                    "4": "Экспертиза в цифровых решениях",
-                    "5": "Инновационный подход к дизайну",
-                    "6": "Стратегический цифровой маркетинг",
-                    "7": "Решения, основанные на данных",
-                    "8": "Надежные меры безопасности",
-                    "9": "Индивидуальные цифровые стратегии",
-                    "10": "Масштабируемые и адаптивные решения",
-                    "11": "Доказанный успех и надежность",
-                    "12": "Функции",
-                    "13": "UI/UX, удобный пользователю",
-                    "14": "Акцент на целевую аудиторию",
-                    "15": "Безопасное приложение",
-                    "16": "Поток пользовательского опыта",
-                    "17": "Красивый графический дизайн",
-                    "18": "Скачать брошюру"
                 }
             },
             cases: {

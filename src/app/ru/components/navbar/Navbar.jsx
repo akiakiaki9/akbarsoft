@@ -58,7 +58,7 @@ export default function Navbar() {
                                     {t("navbar.item_1")}
                                 </Link>
                             </li>
-                            <li className="navbar__item">
+                            {/* <li className="navbar__item">
                                 <Link href='ru//services' className="dropdown-toggle"
                                     onClick={(e) => {
                                         if (isMobile) {
@@ -91,9 +91,9 @@ export default function Navbar() {
                                         </li>
                                     </ul>
                                 ) : null}
-                            </li>
+                            </li> */}
                             <li className="navbar__item">
-                                <Link href="/ru/cases" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/cases' ? 'var(--purple-color)' : '' }}>
+                                <Link href="/ru/#cases" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/cases' ? 'var(--purple-color)' : '' }}>
                                     {t("navbar.item_6")}
                                 </Link>
                             </li>
@@ -119,12 +119,12 @@ export default function Navbar() {
                                 {(isMobile && openDropdowns[1]) || !isMobile ? (
                                     <ul className="navbar__sub-list">
                                         <li>
-                                            <Link href="/ru/team" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/team' ? 'var(--purple-color)' : '' }}>
+                                            <Link href="/ru/#pricing-plan" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/team' ? 'var(--purple-color)' : '' }}>
                                                 {t("navbar.item_9")}
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/ru/faq" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/faq' ? 'var(--purple-color)' : '' }}>
+                                            <Link href="/ru/#faq" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/faq' ? 'var(--purple-color)' : '' }}>
                                                 {t("navbar.item_10")}
                                             </Link>
                                         </li>

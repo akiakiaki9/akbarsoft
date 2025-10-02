@@ -118,14 +118,7 @@ export default function PricingPlan() {
     };
 
     return (
-        <div className='pricing'>
-            <div className="pricing-header">
-                <div className="pricing-header__container">
-                    <p className='pricing-header__p-1'>{t("pricingplan.pagename_1")}</p>
-                    <h1>{t("pricingplan.pagename_2")}</h1>
-                    <p className='pricing-header__p-2'>{t("pricingplan.pagename_3")}</p>
-                </div>
-            </div>
+        <div className='pricing' id='pricing-plan'>
             <div className="main">
                 <div className="pricing-blok">
                     {PRICING.map(item => (

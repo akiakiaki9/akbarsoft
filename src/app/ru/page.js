@@ -1,14 +1,13 @@
+import Cases from "./cases/Cases";
 import Carousel from "./components/carousel/Carousel";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
 import Offers from "./components/offers/Offers";
-import Section2 from "./components/section/Section2";
 import Section3 from "./components/section/Section3";
-import Section4 from "./components/section/Section4";
 import Section5 from "./components/section/Section5";
-import Section6 from "./components/section/Section6";
-import Section7 from "./components/section/Section7";
+import Faq from "./faq/Faq";
+import PricingPlan from "./pricing-plan/PricingPlan";
 
 export default function Home() {
 
@@ -16,14 +15,13 @@ export default function Home() {
     <div>
       <Navbar />
       <Header />
-      <Section2 />
       <Section3 />
-      <Section4 />
+      <Cases />
       <Offers />
+      <PricingPlan />
       <Section5 />
-      <Section6 />
-      <Section7 />
       <Carousel />
+      <Faq />
       <Footer />
     </div>
   );

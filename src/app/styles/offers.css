@@ -1,5 +1,5 @@
 .offers {
-    background: #0F0520 url(/images/title-bg.png);
+    background-image: linear-gradient(180deg, #0A011880 0%, #0F0520 100%), url(/images/section3/section3-bg.jpg);   
     background-position: top center;
     background-size: cover;
     padding: 0 0 50px 0;
