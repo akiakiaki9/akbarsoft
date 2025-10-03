@@ -32,14 +32,14 @@ export default function Faq() {
     ];
 
     return (
-        <div className='faq'>
+        <div className='faq' id="faq">
             <div className="main">
                 <div className="faq-blok">
                     <div className="faq-blok__section-1">
                         <p className='faq-blok__section-1__p-1'>{t("faq.item_1.1")}</p>
                         <h1>{t("faq.item_1.2")}</h1>
                         <p className='faq-blok__section-1__p-2'>{t("faq.item_1.3")}</p>
-                        <Link href='/en/contacts'><button className='grad-button'>{t("faq.item_1.4")}</button></Link>
+                        <Link href='/ru/contacts'><button className='grad-button'>{t("faq.item_1.4")}</button></Link>
                     </div>
                     <div className="faq-blok__section-2">
                         {faqData.map((item, index) => (

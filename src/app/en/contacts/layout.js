@@ -1,12 +1,12 @@
 export const metadata = {
-    title: 'Contacts Akbar Soft',
-    description: 'Contact Akbar Soft - order websites, web design, get development consultation',
+    title: 'Контакты Akbar Soft',
+    description: 'Свяжитесь с Akbar Soft — закажите веб-сайты, веб-дизайн, получите консультацию по разработке',
     keywords: 'Akbar Soft, контакты, Web, Web Site, website, Bukhara, Бухара, веб сайт, веб',
     robots: 'index, follow',
     canonical: 'https://akbarsoft.uz/contacts',
     openGraph: {
-        title: 'Contacts Akbar Soft',
-        description: 'Contact Akbar Soft - order websites, web design, get development consultation',
+        title: 'Контакты Akbar Soft',
+        description: 'Свяжитесь с Akbar Soft — закажите веб-сайты, веб-дизайн, получите консультацию по разработке',
         url: 'https://akbarsoft.uz/contacts',
         type: 'website',
         locale: 'uz_UZ',
@@ -15,8 +15,8 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Contacts Akbar Soft',
-        description: 'Contact Akbar Soft - order websites, web design, get development consultation',
+        title: 'Контакты Akbar Soft',
+        description: 'Свяжитесь с Akbar Soft — закажите веб-сайты, веб-дизайн, получите консультацию по разработке',
     },
 };
 

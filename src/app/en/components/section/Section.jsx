@@ -1,7 +1,7 @@
 "use client"
+import { SECTION_PART1, SECTION_PART2 } from '../../utils/section';
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { SECTION_PART1, SECTION_PART2 } from '../../utils/section';
 
 export default function Section() {
     const { t } = useTranslation();

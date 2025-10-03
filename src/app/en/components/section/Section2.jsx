@@ -18,7 +18,7 @@ export default function Section2() {
                         <p className='section2-blok__section__p1'>{t("section2.1")}</p>
                         <h1>{t("section2.2")}</h1>
                         <p className='section2-blok__section__p2'>{t("section2.3")}</p>
-                        <Link href='/en/about-us'><button className='grad-button'>{t("section2.4")}</button></Link>
+                        <Link href='/ru/about-us'><button className='grad-button'>{t("section2.4")}</button></Link>
                     </div>
                 </div>
             </div>

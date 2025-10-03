@@ -68,10 +68,10 @@ export default function Contacts() {
                                             {t("contacts.item_1.4")}
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Uzbekistan
+                                            Узбекистан
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Bukhara - Center
+                                            Бухара - центр
                                         </p>
                                     </div>
                                 </div>

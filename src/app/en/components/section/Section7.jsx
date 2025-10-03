@@ -11,7 +11,7 @@ export default function Section7() {
                 <div className="section7-blok__container">
                     <h1>{t("section7.1")}</h1>
                     <p>{t("section7.2")}</p>
-                    <Link href='/en/faq'><button className='grad-button'>{t("section7.3")}</button></Link>
+                    <Link href='/ru/faq'><button className='grad-button'>{t("section7.3")}</button></Link>
                 </div>
             </div>
         </div>

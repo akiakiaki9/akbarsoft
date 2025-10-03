@@ -15,7 +15,7 @@ export default function Footer() {
                 <div className="footer-blok">
                     <div className="footer-blok__section-1">
                         <div className="footer-blok__section-1__image">
-                            <Link href='/'><img src="/images/logo.png" alt="Akbar Soft Logo" /></Link>
+                            <Link href='/ru/'><img src="/images/logo.png" alt="Akbar Soft Logo" /></Link>
                         </div>
                         <p>{t("footer.1")}</p>
                         <div className="footer-blok__section-1__footer">
@@ -28,26 +28,26 @@ export default function Footer() {
                     <div className="footer-blok__section-2">
                         <div className="footer-blok__section-2__part">
                             <p className='footer-blok__section-2__part__p-1'>{t("footer.item_1")}</p>
-                            <Link href='/en/services'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_2")}</p></Link>
-                            <Link href='/en/services'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_3")}</p></Link>
-                            <Link href='/en/services'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_4")}</p></Link>
+                            <Link href='/ru/services'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_2")}</p></Link>
+                            <Link href='/ru/services'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_3")}</p></Link>
+                            <Link href='/ru/services'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_4")}</p></Link>
                         </div>
                         <div className="footer-blok__section-2__part">
                             <p className='footer-blok__section-2__part__p-1'>{t("footer.item_5")}</p>
-                            <Link href='/en/faq'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_6")}</p></Link>
-                            <Link href='/en/contacts'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_7")}</p></Link>
+                            <Link href='/ru/#faq'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_6")}</p></Link>
+                            <Link href='/ru/contacts'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_7")}</p></Link>
                         </div>
                         <div className="footer-blok__section-2__part">
                             <p className='footer-blok__section-2__part__p-1'>{t("footer.item_8")}</p>
-                            <Link href='/en/team'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_10")}</p></Link>
-                            <Link href='/en/cases'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_11")}</p></Link>
+                            <Link href='/ru/team'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_10")}</p></Link>
+                            <Link href='/ru//cases'><p className='footer-blok__section-2__part__p-2'>{t("footer.item_11")}</p></Link>
                         </div>
                     </div>
                 </div>
                 <div className="footer-footer">
                     <div className="footer-footer-blok">
                         <p>{t("footer.footer_1")}</p>
-                        <Link href='/en/contacts'>{t("footer.footer_2")}</Link>
+                        <Link href='/ru/'>{t("footer.footer_2")}</Link>
                     </div>
                 </div>
             </div>

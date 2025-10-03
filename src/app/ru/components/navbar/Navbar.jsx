@@ -133,7 +133,7 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <div className="navbar__lang-2"><LanguageSwitcher /></div>
-                        <Link className='navbar__button-a' href="/ru/pricing-plan" onClick={toggleMobileMenu}>
+                        <Link className='navbar__button-a' href="/ru/#pricing-plan" onClick={toggleMobileMenu}>
                             <button className="navbar__button">{t("navbar.item_11")}</button>
                         </Link>
                     </nav>

@@ -27,21 +27,15 @@ export default function Offers() {
     ];
     return (
         <div className='offers'>
-            <div className='title'>
-                <div className="title-blok">
-                    <p>{t("offers.1")}</p>
-                    <h1>{t("offers.2")}</h1>
-                </div>
-            </div>
             <div className="main">
                 <div className="offers-blok">
                     {OFFERS.map(item => (
                         <div className='offers-blok__section' key={item.id}>
                             <div className="offers-blok__section__absolute">
                                 <img src={item.image} alt="" />
-                                <Link href='/en/'><h1>{t(item.title)}</h1></Link>
+                                <Link href='/ru/'><h1>{t(item.title)}</h1></Link>
                                 <p>{t(item.subtitle)}</p>
-                                <Link href='/en/services'><button className='grad-button'>{t("offers.3")}</button></Link>
+                                <Link href='/ru/services'><button className='grad-button'>{t("offers.3")}</button></Link>
                             </div>
                         </div>
                     ))}

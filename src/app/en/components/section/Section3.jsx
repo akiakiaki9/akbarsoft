@@ -15,8 +15,8 @@ export default function Section3() {
                             <p className='section3-blok__section-1__p1'>{t("section3.1")}</p>
                             <h1>{t("section3.2")}</h1>
                             <p className='section3-blok__section-1__p2'>{t("section3.3")} </p>
-                            <Link href='/en/cases'><button className='grad-button'>{t("section3.4")}</button></Link>
-                            <Link href='/en/cases'>
+                            <Link href='/ru/cases'><button className='grad-button'>{t("section3.4")}</button></Link>
+                            <Link href='/ru/cases'>
                                 <div className="section3__absolute-1">
                                     <HiMiniArrowTopRightOnSquare className="section3__icon-1" />
                                 </div>
@@ -29,7 +29,7 @@ export default function Section3() {
                                 <p className='section3-blok__section-2__container__p-1'>{t("section3.5")}</p>
                                 <h1>{t("section3.6")}</h1>
                                 <p className='section3-blok__section-2__container__p-2'>{t("section3.7")}</p>
-                                <Link href='/en/'>
+                                <Link href='/ru/'>
                                     <div className="section3__absolute-2">
                                         <HiMiniArrowTopRightOnSquare className="section3__icon-2" />
                                     </div>
@@ -39,7 +39,7 @@ export default function Section3() {
                                 <p className='section3-blok__section-2__container__p-1'>{t("section3.8")}</p>
                                 <h1>{t("section3.9")}</h1>
                                 <p className='section3-blok__section-2__container__p-2'>{t("section3.10")}</p>
-                                <Link href='/en/'>
+                                <Link href='/ru/'>
                                     <div className="section3__absolute-2">
                                         <HiMiniArrowTopRightOnSquare className="section3__icon-2" />
                                     </div>

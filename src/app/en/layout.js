@@ -1,14 +1,14 @@
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Akbar Soft | Create web-sites and designs",
-  description: "We are a team of freelancers developing websites, web designs, etc.",
-  keywords: "Freelance, websites, create a website, sayt taxlash, sayt zakaz, website, create a website, website development, online store development, order a website, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Freelance, IT company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Bukhara, Bukhara IT company, IT company, akbar soft IT company",
+  title: "Akbar Soft | Создание сайтов и дизайнов",
+  description: "Мы команда фрилансеров разрабатываем веб-сайты, веб-дизайны и т.д.",
+  keywords: "Freelance, сайты, делать сайт, sayt taxlash, sayt zakaz, веб-сайт, создать веб-сайт, разработка веб-сайтов, разработка онлайн магазина, заказать веб-сайт, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/",
   openGraph: {
     title: "Akbar Soft",
-    description: "We are a team of freelancers developing websites, web designs, etc.",
+    description: "Мы команда фрилансеров разрабатываем веб-сайты, веб-дизайны и т.д.",
     url: "https://akbarsoft.uz/",
     type: "website",
     locale: "uz_UZ",
@@ -18,13 +18,13 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Akbar Soft",
-    description: "We are a team of freelancers developing websites, web designs, etc.",
+    description: "Мы команда фрилансеров разрабатываем веб-сайты, веб-дизайны и т.д.",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <meta name="yandex-verification" content="f201683b2288240d" />

@@ -7,15 +7,7 @@ import { useTranslation } from 'react-i18next'
 export default function Cases() {
     const { t } = useTranslation();
     return (
-        <div className='cases'>
-            <div className='pagename'>
-                <div className='pagename__container'>
-                    <div className='pagename-blok'>
-                        <h1>{t("cases.pagename_1")}</h1>
-                        <p>{t("cases.pagename_2")}</p>
-                    </div>
-                </div>
-            </div>
+        <div className='cases' id='cases'>
             <div className="cases-header">
                 <p>{t("cases.1")}</p>
                 <h1>{t("cases.2")}</h1>
