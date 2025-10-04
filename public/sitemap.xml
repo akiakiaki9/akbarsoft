@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Главная страница -->
     <url>
         <loc>https://akbarsoft.uz/ru</loc>
         <lastmod>2025-05-03</lastmod>
@@ -8,28 +7,16 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://akbarsoft.uz/ru/services</loc>
-        <lastmod>2025-05-03</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://akbarsoft.uz/ru/contacts</loc>
         <lastmod>2025-05-03</lastmod>
         <changefreq>daily</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://akbarsoft.uz/en</loc>
         <lastmod>2025-05-03</lastmod>
         <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/en/services</loc>
-        <lastmod>2025-05-03</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
+        <priority>8.0</priority>
     </url>
     <url>
         <loc>https://akbarsoft.uz/en/contacts</loc>
