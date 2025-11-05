@@ -1,6 +1,18 @@
 const CASES = [
     {
         id: 1,
+        image: '/images/cases/cases-9.png',
+        title: 'Web Site',
+        subtitle: 'Fazza Burger - Офицальная страница сети бургерного в городе Бухара',
+        name: 'Fazza Burger',
+        client: 'Fazza Burgeer',
+        date: '04 November 2025',
+        location: 'Uzbekistan, Bukhara',
+        budget: '$100',
+        link: 'https://fazzaburger.uz/'
+    },
+    {
+        id: 2,
         image: '/images/cases/cases-6.png',
         title: 'Web Site',
         subtitle: 'Kinomano — быстро и надежно ищите информацию о фильмах и сериалах.',
@@ -12,7 +24,7 @@ const CASES = [
         link: 'https://kinomano.uz/'
     },
     {
-        id: 2,
+        id: 3,
         image: '/images/cases/cases-7.png',
         title: 'Web Site',
         subtitle: 'Ваш надежный партнер на рынке труда. Мы помогаем компаниям найти талантливых сотрудников, а кандидатам – интересную работу.',
@@ -24,7 +36,7 @@ const CASES = [
         link: 'https://ishcord.uz/'
     },
     {
-        id: 3,
+        id: 4,
         image: '/images/cases/cases-4.png',
         title: 'Web Site',
         subtitle: 'A law firm providing high-quality legal services to businesses and individuals.',
@@ -36,7 +48,7 @@ const CASES = [
         link: 'https://tlpartners.uz/'
     },
     {
-        id: 4,
+        id: 5,
         image: '/images/cases/cases-1.png',
         title: 'Web Site',
         subtitle: 'Learn About Oxford IELTS Center. Effectively tailor learning materials to students needs to achieve high results in IELTS and CEFR exams.',
@@ -48,7 +60,7 @@ const CASES = [
         link: 'https://oxfordieltscenter.uz/'
     },
     {
-        id: 5,
+        id: 6,
         image: '/images/cases/cases-8.png',
         title: 'Web Site',
         subtitle: 'Актуальная погода по всем городам Узбекистана.',
@@ -58,19 +70,7 @@ const CASES = [
         location: 'Uzbekistan, Tashkent',
         budget: '$500',
         link: 'https://pogodka.uz/'
-    },
-    {
-        id: 6,
-        image: '/images/cases/cases-2.png',
-        title: 'Web Design',
-        subtitle: 'Вызвать мастераВаш надежный сантехник в Магнитогорске!',
-        name: 'Магсантех',
-        client: 'Макаров Евгений',
-        date: '20 Dec 2024',
-        location: 'Russia',
-        budget: '$500',
-        link: 'https://mgnsantech74.tilda.ws/'
-    },
+    }
     // {
     //     id: 6,
     //     image: '/images/cases/cases-3.png',
