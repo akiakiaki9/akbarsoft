@@ -106,10 +106,10 @@ export default function Contacts() {
                                             {t("contacts.item_1.6")}
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Phone : +998 932201512
+                                            Phone : +998 500953331
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Fax : +998 93 220 15 12
+                                            Fax : +998 50 095 33 31
                                         </p>
                                     </div>
                                 </div>
