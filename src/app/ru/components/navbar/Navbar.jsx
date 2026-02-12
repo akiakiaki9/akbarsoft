@@ -1,4 +1,6 @@
 'use client';
+
+import { Suspense } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -7,11 +9,12 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { IoIosArrowDown } from "react-icons/io";
 import LanguageSwitcher from '../LanguageSwitcher';
 
-export default function Navbar() {
+// 👇 Выносим основную логику во внутренний компонент
+function NavbarContent() {
     const { t } = useTranslation();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdowns, setOpenDropdowns] = useState({});
-    const pathname = usePathname();
+    const pathname = usePathname(); // ← теперь безопасно внутри Suspense
     const [activePage, setActivePage] = useState(pathname);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -58,40 +61,6 @@ export default function Navbar() {
                                     {t("navbar.item_1")}
                                 </Link>
                             </li>
-                            {/* <li className="navbar__item">
-                                <Link href='ru//services' className="dropdown-toggle"
-                                    onClick={(e) => {
-                                        if (isMobile) {
-                                            e.preventDefault();
-                                            toggleDropdown(0);
-                                        }
-                                    }}
-                                    onMouseEnter={!isMobile ? () => toggleDropdown(0) : undefined}
-                                    onMouseLeave={!isMobile ? () => toggleDropdown(0) : undefined}
-                                >
-                                    {t("navbar.item_3")}
-                                    <IoIosArrowDown className={`navbar__arrow ${openDropdowns[0] ? 'open' : ''}`} />
-                                </Link>
-                                {(isMobile && openDropdowns[0]) || !isMobile ? (
-                                    <ul className="navbar__sub-list">
-                                        <li>
-                                            <Link href="/ru/services" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/services' ? 'var(--purple-color)' : '' }}>
-                                                {t("navbar.item_3")}
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/ru/pricing-plan" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/pricing-plan' ? 'var(--purple-color)' : '' }}>
-                                                {t("navbar.item_4")}
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/ru/services/detail" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/services/detail' ? 'var(--purple-color)' : '' }}>
-                                                {t("navbar.item_5")}
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                ) : null}
-                            </li> */}
                             <li className="navbar__item">
                                 <Link href="/ru/#cases" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/cases' ? 'var(--purple-color)' : '' }}>
                                     {t("navbar.item_6")}
@@ -141,4 +110,13 @@ export default function Navbar() {
             </div>
         </header>
     );
-};
+}
+
+// 👇 Экспортируем обёрнутый в Suspense
+export default function Navbar() {
+    return (
+        <Suspense fallback={<div className="navbar-placeholder">Loading...</div>}>
+            <NavbarContent />
+        </Suspense>
+    );
+}
