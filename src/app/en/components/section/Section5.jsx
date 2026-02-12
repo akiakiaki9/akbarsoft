@@ -1,13 +1,14 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
-export default function Section5() {
+// 👇 Выносим основную логику во внутренний компонент
+function Section5Content() {
     const {t} = useTranslation();
-    const pathname = usePathname();
+    const pathname = usePathname(); // ← теперь безопасно внутри Suspense
     const imageSrc = pathname === "/team" ? "/images/services/services.jpg" : "/images/section5/section5.jpg";
 
     const skills = [
@@ -55,4 +56,13 @@ export default function Section5() {
             </div>
         </div>
     );
-};
+}
+
+// 👇 Экспортируем обёрнутый в Suspense
+export default function Section5() {
+    return (
+        <Suspense fallback={<div style={{ height: '400px' }}></div>}>
+            <Section5Content />
+        </Suspense>
+    );
+}
