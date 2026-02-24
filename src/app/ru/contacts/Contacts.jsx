@@ -4,12 +4,10 @@ import { SlLocationPin } from "react-icons/sl";
 import { MdOutlineMail } from "react-icons/md";
 import { BsTelephone } from "react-icons/bs";
 import { IoTimeOutline } from "react-icons/io5";
-import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
 import { FaTelegramPlane } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
 
 export default function Contacts() {
-    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         theme: "CONTACTS (FOR FEEDBACK)",
         name: '',
@@ -134,7 +132,7 @@ export default function Contacts() {
                             </div>
                         </div>
                         <div className="contacts-blok__section-1__footer">
-                            <h2>{t("contacts.item_1.8")}</h2>
+                            <h2>Мы в социальных сетях</h2>
                             <div className="contacts-blok__section-1__footer__container">
                                 <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/by.tillayev/?utm_source=ig_web_button_share_sheet">
                                     <FaInstagram className='footer-blok__section-1__icon' />
@@ -147,41 +145,41 @@ export default function Contacts() {
                     </div>
                     <div className="contacts-blok__section-2">
                         <form className='contacts-form' onSubmit={handleSubmit}>
-                            <h1>{t("contacts.item_2.1")}</h1>
-                            <p>{t("contacts.item_2.2")}</p>
+                            <h1>Отправьте нам сообщение</h1>
+                            <p>Пожалуйста, не стесняйтесь отправлять нам вопросы, отзывы или предложения.</p>
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>{t("contacts.item_2.3")}</label>
-                                    <input minLength={3} type="text" name="name" value={formData.name} onChange={handleChange} placeholder={t("contacts.item_2.3")} required />
+                                    <label>Имя</label>
+                                    <input minLength={3} type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Имя" required />
                                 </div>
                                 <div className="contacts-form__section-part">
-                                    <label>{t("contacts.item_2.4")}</label>
-                                    <input minLength={2} type="text" name="company" value={formData.company} onChange={handleChange} placeholder={t("contacts.item_2.4")} required />
+                                    <label>Компания</label>
+                                    <input minLength={2} type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Компания" required />
                                 </div>
                             </div>
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>{t("contacts.item_2.5")}</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder={t("contacts.item_2.5")} required />
+                                    <label>Телефон</label>
+                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Телефон" required />
                                 </div>
                                 <div className="contacts-form__section-part">
-                                    <label>{t("contacts.item_2.6")}</label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder={t("contacts.item_2.6")} required />
+                                    <label>Email</label>
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
                                 </div>
                             </div>
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>{t("contacts.item_2.7")}</label>
-                                    <input minLength={5} type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder={t("contacts.item_2.7")} required />
+                                    <label>Тема</label>
+                                    <input minLength={5} type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Тема" required />
                                 </div>
                             </div>
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>{t("contacts.item_2.8")}</label>
-                                    <textarea minLength={10} name="message" value={formData.message} onChange={handleChange} placeholder={t("contacts.item_2.8")} required />
+                                    <label>Сообщение</label>
+                                    <textarea minLength={10} name="message" value={formData.message} onChange={handleChange} placeholder="Сообщение" required />
                                 </div>
                             </div>
-                            <button type='submit'>{t("contacts.item_2.9")}</button>
+                            <button type='submit'>ОТПРАВИТЬ СООБЩЕНИЕ</button>
                         </form>
                     </div>
                 </div>
