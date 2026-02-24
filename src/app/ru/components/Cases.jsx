@@ -2,10 +2,8 @@
 import React from 'react'
 import CASES from '../utils/cases'
 import Link from 'next/link'
-import { useTranslation } from 'react-i18next'
 
 export default function Cases() {
-    const { t } = useTranslation();
     return (
         <div className='cases' id='cases'>
             <div className="cases-header">
