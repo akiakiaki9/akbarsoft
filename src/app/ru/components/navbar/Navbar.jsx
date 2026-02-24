@@ -4,17 +4,14 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { IoIosArrowDown } from "react-icons/io";
 import LanguageSwitcher from '../LanguageSwitcher';
 
-// 👇 Выносим основную логику во внутренний компонент
 function NavbarContent() {
-    const { t } = useTranslation();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdowns, setOpenDropdowns] = useState({});
-    const pathname = usePathname(); // ← теперь безопасно внутри Suspense
+    const pathname = usePathname();
     const [activePage, setActivePage] = useState(pathname);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -58,17 +55,17 @@ function NavbarContent() {
                         <ul className="navbar__list">
                             <li className="navbar__item">
                                 <Link href="/ru/" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/' ? 'var(--purple-color)' : '' }}>
-                                    {t("navbar.item_1")}
+                                    Главная
                                 </Link>
                             </li>
                             <li className="navbar__item">
                                 <Link href="/ru/#cases" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/cases' ? 'var(--purple-color)' : '' }}>
-                                    {t("navbar.item_6")}
+                                    Проекты
                                 </Link>
                             </li>
                             <li className="navbar__item">
                                 <Link href="/ru/contacts" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/contacts' ? 'var(--purple-color)' : '' }}>
-                                    {t("navbar.item_7")}
+                                    Контакты
                                 </Link>
                             </li>
                             <li className="navbar__item">
@@ -82,19 +79,19 @@ function NavbarContent() {
                                     onMouseEnter={!isMobile ? () => toggleDropdown(1) : undefined}
                                     onMouseLeave={!isMobile ? () => toggleDropdown(1) : undefined}
                                 >
-                                    {t("navbar.item_8")}
+                                    Прочее
                                     <IoIosArrowDown className={`navbar__arrow ${openDropdowns[1] ? 'open' : ''}`} />
                                 </Link>
                                 {(isMobile && openDropdowns[1]) || !isMobile ? (
                                     <ul className="navbar__sub-list">
                                         <li>
                                             <Link href="/ru/#pricing-plan" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/team' ? 'var(--purple-color)' : '' }}>
-                                                {t("navbar.item_9")}
+                                                Цены
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href="/ru/#faq" onClick={toggleMobileMenu} style={{ color: activePage === '/ru/faq' ? 'var(--purple-color)' : '' }}>
-                                                {t("navbar.item_10")}
+                                                FAQ
                                             </Link>
                                         </li>
                                     </ul>
@@ -103,7 +100,7 @@ function NavbarContent() {
                         </ul>
                         <div className="navbar__lang-2"><LanguageSwitcher /></div>
                         <Link className='navbar__button-a' href="/ru/#pricing-plan" onClick={toggleMobileMenu}>
-                            <button className="navbar__button">{t("navbar.item_11")}</button>
+                            <button className="navbar__button">ЗАКАЗ</button>
                         </Link>
                     </nav>
                 </div>
@@ -119,4 +116,4 @@ export default function Navbar() {
             <NavbarContent />
         </Suspense>
     );
-}
+};

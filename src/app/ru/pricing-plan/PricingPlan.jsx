@@ -2,51 +2,49 @@
 import React, { useState } from 'react';
 import { RiRecordCircleLine } from "react-icons/ri";
 import { IoCloseSharp } from 'react-icons/io5';
-import { useTranslation } from 'react-i18next';
 
 export default function PricingPlan() {
-    const { t } = useTranslation();
     const PRICING = [
         {
             id: 1,
-            title: t("pricingplan.item_1.1"),
-            subtitle: t("pricingplan.item_1.2"),
+            title: "Сайт визитка",
+            subtitle: "Лендинг-страница — одностраничный сайт для привлечения клиентов, рекламы и лидов.",
             price: '$300 - $500',
-            discount: '$100 - $300',
+            discount: '$200 - $300',
             includes: {
-                include_1: t("pricingplan.item_1.4"),
-                include_2: t("pricingplan.item_1.5"),
-                include_3: t("pricingplan.item_1.6"),
-                include_4: t("pricingplan.item_1.7"),
-                include_5: t("pricingplan.item_1.8")
+                include_1: "Адаптивный дизайн",
+                include_2: "Кнопки призыва к действию",
+                include_3: "Базовый SEO",
+                include_4: "Быстрая загрузка",
+                include_5: "Интеграция контактной формы"
             }
         },
         {
             id: 2,
-            title: t("pricingplan.item_2.1"),
-            subtitle: t("pricingplan.item_2.2"),
-            price: '$500 - $800',
-            discount: '$400 - $700',
+            title: "Бизнес-сайт",
+            subtitle: "Полнофункциональный сайт для бизнеса с возможностью масштабирования и расширения функционала.",
+            price: '$400 - $1500',
+            discount: '$350 - $1000',
             includes: {
-                include_1: t("pricingplan.item_2.4"),
-                include_2: t("pricingplan.item_2.5"),
-                include_3: t("pricingplan.item_2.6"),
-                include_4: t("pricingplan.item_2.7"),
-                include_5: t("pricingplan.item_2.8")
+                include_1: "Адаптивный дизайн",
+                include_2: "Конструктор сайтов",
+                include_3: "Интеграция соцсетей",
+                include_4: "Базовый SEO",
+                include_5: "Интеграция контактной формы"
             }
         },
         {
             id: 3,
-            title: t("pricingplan.item_3.1"),
-            subtitle: t("pricingplan.item_3.2"),
+            title: "Локация в картах",
+            subtitle: "Добавим вашу компанию в Google Maps, 2Гис и Яндекс.Карт (Такси) и Apple maps",
             price: '$100',
-            discount: '$30',
+            discount: '$50',
             includes: {
-                include_1: t("pricingplan.item_3.4"),
-                include_2: t("pricingplan.item_3.5"),
-                include_3: t("pricingplan.item_3.6"),
-                include_4: t("pricingplan.item_3.7"),
-                include_5: t("pricingplan.item_3.8")
+                include_1: "Добавление в Google Maps",
+                include_2: "Добавление в 2Гис",
+                include_3: "Добавление в Яндекс.Карты",
+                include_4: "Добавление в Apple Maps",
+                include_5: "Поддержка всех форматов"
             }
         },
     ];
@@ -129,7 +127,7 @@ export default function PricingPlan() {
                                 <h1>{item.discount}</h1>
                                 <p>{item.price}</p>
                             </div>
-                            <h2 className='pricing-blok__section__h2'>{t("pricingplan.item_1.3")}</h2>
+                            <h2 className='pricing-blok__section__h2'>Включает:</h2>
                             <div className="pricing-blok__section__container">
                                 <div className="pricing-blok__section__container-part">
                                     <RiRecordCircleLine className='pricing__icon' />
@@ -153,7 +151,7 @@ export default function PricingPlan() {
                                 </div>
                             </div>
                             <button className='grad-button' onClick={() => handleButtonClick(item)}>
-                                {t("pricingplan.item_1.9")}
+                                ЗАКАЗАТЬ
                             </button>
                         </div>
                     ))}
@@ -168,51 +166,51 @@ export default function PricingPlan() {
                             <IoCloseSharp className="join__close" onClick={closeModal} />
                         </div>
                         <p>Write what exactly you want to issue and we will definitely contact you!</p>
-                        
+
                         <form className="join-form" onSubmit={handleSubmit}>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
                                 value={formData.email}
                                 onChange={handleInputChange}
-                                required 
-                                placeholder='Your Email' 
+                                required
+                                placeholder='Your Email'
                             />
-                            <input 
-                                type="tel" 
-                                id="phone" 
-                                name="phone" 
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
                                 value={formData.phone}
                                 onChange={handleInputChange}
-                                required 
-                                placeholder='Your Phone' 
+                                required
+                                placeholder='Your Phone'
                             />
-                            <textarea 
-                                id="message" 
-                                name="message" 
+                            <textarea
+                                id="message"
+                                name="message"
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                required 
-                                placeholder='Message' 
+                                required
+                                placeholder='Message'
                                 rows="4"
                             />
-                            
+
                             {submitStatus === 'success' && (
                                 <div className="form-success">
                                     Thank you! We will contact you soon.
                                 </div>
                             )}
-                            
+
                             {submitStatus === 'error' && (
                                 <div className="form-error">
                                     Something went wrong. Please try again.
                                 </div>
                             )}
-                            
-                            <button 
-                                type="submit" 
-                                className="grad-button" 
+
+                            <button
+                                type="submit"
+                                className="grad-button"
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? 'Sending...' : 'Submit'}

@@ -52,9 +52,9 @@ export default function Contacts() {
             <div className="main">
                 <div className="contacts-blok">
                     <div className="contacts-blok__section-1">
-                        <p className="contacts-blok__section-1__p-1">{t("contacts.item_1.1")}</p>
-                        <h1 className='contacts-blok__section-1__h1-1'>{t("contacts.item_1.2")}</h1>
-                        <p className="contacts-blok__section-1__p-2">{t("contacts.item_1.3")}</p>
+                        <p className="contacts-blok__section-1__p-1">Свяжитесь с нами</p>
+                        <h1 className='contacts-blok__section-1__h1-1'>Контактная информация</h1>
+                        <p className="contacts-blok__section-1__p-2">Начните общение для установления хороших отношений и бизнеса</p>
                         <div className="contacts-blok__section-1__container">
                             <div className="contacts-blok__section-1__container__section">
                                 <div className="contacts-blok__section-1__container__section-part">
@@ -65,7 +65,7 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            {t("contacts.item_1.4")}
+                                            Главный офис
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             Узбекистан
@@ -83,7 +83,7 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            {t("contacts.item_1.5")}
+                                            Наша электронной почта
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             akbarsoftfreelance@gmail.com
@@ -103,10 +103,10 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            {t("contacts.item_1.6")}
+                                            Телефон номер
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Phone : +998 500953331
+                                            Phone : +998 88 558 93 00
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             Fax : +998 50 095 33 31
@@ -121,13 +121,13 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            {t("contacts.item_1.7")}
+                                            Рабочие часы
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Monday - Saturday
+                                            Понедельник - Суббота
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            10am - 11pm
+                                            10:00 - 17:00
                                         </p>
                                     </div>
                                 </div>
@@ -136,17 +136,11 @@ export default function Contacts() {
                         <div className="contacts-blok__section-1__footer">
                             <h2>{t("contacts.item_1.8")}</h2>
                             <div className="contacts-blok__section-1__footer__container">
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.facebook.com/share/18XvQozToa/?mibextid=wwXIfr">
-                                    <FaFacebookF className='footer-blok__section-1__icon' />
-                                </a>
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/akbarsoftuz/?utm_source=ig_web_button_share_sheet">
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/by.tillayev/?utm_source=ig_web_button_share_sheet">
                                     <FaInstagram className='footer-blok__section-1__icon' />
                                 </a>
                                 <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft">
                                     <FaTelegramPlane className='footer-blok__section-1__icon' />
-                                </a>
-                                <a className='contacts-blok__section-1__footer__container-a' href="">
-                                    <FaXTwitter className='footer-blok__section-1__icon' />
                                 </a>
                             </div>
                         </div>

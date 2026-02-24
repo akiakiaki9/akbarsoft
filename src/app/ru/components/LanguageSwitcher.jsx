@@ -1,19 +1,16 @@
 "use client";
 import { Suspense } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import i18n from "@/i18n";
 import { useState, useEffect, useRef } from "react";
 
-// 👇 Выносим основную логику во внутренний компонент
 function LanguageSwitcherContent() {
     const router = useRouter();
-    const pathname = usePathname(); // ← теперь безопасно внутри Suspense
+    const pathname = usePathname();
     const currentLang = pathname.startsWith("/ru") ? "ru" : "en";
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
     const switchLanguage = (lang) => {
-        i18n.changeLanguage(lang);
         localStorage.setItem("language", lang);
         router.push(`/${lang}`);
         setIsOpen(false);
@@ -60,11 +57,10 @@ function LanguageSwitcherContent() {
     );
 }
 
-// 👇 Экспортируем обёрнутый в Suspense
 export default function LanguageSwitcher() {
     return (
         <Suspense fallback={<div className="language-switcher-placeholder">EN</div>}>
             <LanguageSwitcherContent />
         </Suspense>
     );
-}
+};

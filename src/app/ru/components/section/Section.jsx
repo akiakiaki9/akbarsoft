@@ -1,17 +1,15 @@
 "use client"
 import { SECTION_PART1, SECTION_PART2 } from '../../utils/section';
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 
 export default function Section() {
-    const { t } = useTranslation();
     return (
         <div className='section'>
             <div className="main">
                 <div className="section__contaeiner">
                     <div className="section-blok">
                         <div className="section-blok__header">
-                            <h1>{t("section1.1")}</h1>
+                            <h1>Присоединяйтесь к 150 миллионам компаний, которые уже развивают свой бренд</h1>
                         </div>
                         <div className="section-blok__container">
                             <div className="section-blok__container-part">

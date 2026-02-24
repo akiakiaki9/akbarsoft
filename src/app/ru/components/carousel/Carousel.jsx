@@ -5,7 +5,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useTranslation } from "react-i18next";
 
 const testimonials = [
     {
@@ -29,13 +28,12 @@ const testimonials = [
 ];
 
 export default function Carousel() {
-    const { t } = useTranslation();
     return (
         <div className="carousel">
             <div className="testimonial-header">
                 <div className="testimonial-header__section">
-                    <p>{t("testimonials.1")}</p>
-                    <h1>{t("testimonials.2")}</h1>
+                    <p>Отзывы</p>
+                    <h1>Отзывы наших клиентов</h1>
                 </div>
             </div>
             <div className="main">

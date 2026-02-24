@@ -3,8 +3,6 @@ import './styles/header.css'
 import './styles/section.css'
 import './styles/section2.css'
 import './styles/section3.css'
-import './styles/section4.css'
-import './styles/section5.css'
 import './styles/section6.css'
 import './styles/section7.css'
 import './styles/offers.css'
@@ -12,7 +10,6 @@ import './styles/title.css'
 import './styles/carousel.css'
 import './styles/footer.css'
 import './styles/pagename.css'
-import './styles/team.css'
 import './styles/contacts.css'
 import './styles/navbar.css'
 import './styles/pricing.css'
@@ -29,7 +26,7 @@ import './styles/switcher.css'
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body>
         {children}
       </body>

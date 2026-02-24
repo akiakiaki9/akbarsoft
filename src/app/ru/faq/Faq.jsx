@@ -1,11 +1,9 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function Faq() {
-    const { t } = useTranslation();
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleAccordion = (index) => {
@@ -14,20 +12,20 @@ export default function Faq() {
 
     const faqData = [
         {
-            title: t("faq.item_1.item_1"),
-            content: t("faq.item_1.item_2")
+            title: "Какие услуги предоставляет ваша компания?",
+            content: "Мы специализируемся на веб-разработке, веб-дизайне и IT-консалтинге. Наша команда создает современные и высокопроизводительные решения, соответствующие вашим потребностям."
         }, {
-            title: t("faq.item_1.item_3"),
-            content: t("faq.item_1.item_4")
+            title: "Как долго длится разработка сайта?",
+            content: "Разработка сайта обычно занимает от 1 дня до 2 недель, в зависимости от сложности проекта."
         }, {
-            title: t("faq.item_1.item_5"),
-            content: t("faq.item_1.item_6")
+            title: "Какие технологии вы используете?",
+            content: "Мы используем современные технологии, такие как React, Next.js, Node.js и другие, чтобы создавать высокопроизводительные и масштабируемые решения."
         }, {
-            title: t("faq.item_1.item_7"),
-            content: t("faq.item_1.item_8")
+            title: "Предоставляете ли вы SEO-оптимизацию?",
+            content: "Да, мы предлагаем услуги SEO, чтобы улучшить видимость вашего сайта в поисковых системах и привлечь больше потенциальных клиентов."
         }, {
-            title: t("faq.item_1.item_9"),
-            content: t("faq.item_1.item_10")
+            title: "Сколько стоит разработка сайта?",
+            content: "Стоимость разработки сайта зависит от сложности проекта. Для получения точной информации, пожалуйста, свяжитесь с нами."
         }
     ];
 
@@ -36,10 +34,10 @@ export default function Faq() {
             <div className="main">
                 <div className="faq-blok">
                     <div className="faq-blok__section-1">
-                        <p className='faq-blok__section-1__p-1'>{t("faq.item_1.1")}</p>
-                        <h1>{t("faq.item_1.2")}</h1>
-                        <p className='faq-blok__section-1__p-2'>{t("faq.item_1.3")}</p>
-                        <Link href='/ru/contacts'><button className='grad-button'>{t("faq.item_1.4")}</button></Link>
+                        <p className='faq-blok__section-1__p-1'>Общие вопросы</p>
+                        <h1>Самые популярные вопросы</h1>
+                        <p className='faq-blok__section-1__p-2'>Найдите ответы на наиболее часто задаваемые вопросы о наших услугах.</p>
+                        <Link href='/ru/contacts'><button className='grad-button'>УЗНАТЬ БОЛЬШЕ</button></Link>
                     </div>
                     <div className="faq-blok__section-2">
                         {faqData.map((item, index) => (
@@ -61,4 +59,4 @@ export default function Faq() {
             </div>
         </div>
     );
-}
+};

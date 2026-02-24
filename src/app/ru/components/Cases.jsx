@@ -9,8 +9,8 @@ export default function Cases() {
     return (
         <div className='cases' id='cases'>
             <div className="cases-header">
-                <p>{t("cases.1")}</p>
-                <h1>{t("cases.2")}</h1>
+                <p>наши работы</p>
+                <h1>ВЫПОЛНЕННЫЕ НАМИ ПРОЕКТЫ</h1>
             </div>
             <div className="main">
                 <div className="cases-blok">
