@@ -7,20 +7,20 @@ export default function Offers() {
         {
             id: 1,
             image: '/images/offers/offers-1.png',
-            title: "Разработка сайтов",
-            subtitle: "Создаем быстрые, безопасные и адаптивные сайты для вашего бизнеса."
+            title: "Veb-saytlar yaratish",
+            subtitle: "Biznesingiz uchun tez, xavfsiz va moslashuvchan veb-saytlar yaratamiz."
         },
         {
             id: 2,
             image: '/images/offers/offers-2.png',
-            title: "Локация на картах",
-            subtitle: "Добавим ваш бизнес в карты Google, Яндекс (Такси), 2Gis и Apple."
+            title: "Xaritalarda joylashuv",
+            subtitle: "Biznesingizni Google, Yandex (Taxi), 2Gis va Apple xaritalariga qo'shamiz."
         },
         {
             id: 3,
             image: '/images/offers/offers-3.png',
-            title: "Таргет в инстаграм",
-            subtitle: "Настроим таргетированную рекламу в Instagram для привлечения клиентов и роста продаж."
+            title: "Instagram target",
+            subtitle: "Mijozlarni jalb qilish va savdoni oshirish uchun Instagramda target reklama sozlaymiz."
         }
     ];
     return (
@@ -31,9 +31,9 @@ export default function Offers() {
                         <div className='offers-blok__section' key={item.id}>
                             <div className="offers-blok__section__absolute">
                                 <img src={item.image} alt="" />
-                                <Link href='/ru/'><h1>{item.title}</h1></Link>
+                                <Link href='/uz/'><h1>{item.title}</h1></Link>
                                 <p>{item.subtitle}</p>
-                                <Link href='/ru/services'><button className='grad-button'>УЗНАТЬ БОЛЬШЕ</button></Link>
+                                <Link href='/uz/services'><button className='grad-button'>BATAFSIL</button></Link>
                             </div>
                         </div>
                     ))}

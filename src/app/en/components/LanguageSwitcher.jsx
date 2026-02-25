@@ -6,10 +6,10 @@ import { useState, useEffect, useRef } from "react";
 function LanguageSwitcherContent() {
     const router = useRouter();
     const pathname = usePathname();
-
+    
     // Определяем текущий язык
     const currentLang = pathname.startsWith("/ru") ? "ru" : pathname.startsWith("/uz") ? "uz" : "en";
-
+    
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 

@@ -10,13 +10,13 @@ export default function Header() {
             </video>
             <div className="header-blok">
                 <p className='header__p1'>AKBAR SOFT</p>
-                <h1>Реализуем ваш цифровой потенциал</h1>
+                <h1>Raqamli salohiyatingizni ro'yobga chiqaramiz</h1>
                 <p className='header__p2'>
-                    Помогаем бизнесу с созданием веб-сайтов и сервисов, которые работают на результат.
+                    Natijaga erishish uchun veb-saytlar va xizmatlar yaratishda biznesga yordam beramiz.
                 </p>
                 <div className="header-blok__container">
-                    <a href='#services'><button className='grad-button'>УСЛУГИ</button></a>
-                    <Link href='/ru/contacts'><button className='header-blok__container__button-2'>КОНТАКТЫ</button></Link>
+                    <a href='#services'><button className='grad-button'>XIZMATLAR</button></a>
+                    <Link href='/uz/contacts'><button className='header-blok__container__button-2'>KONTAKTLAR</button></Link>
                 </div>
             </div>
         </div>

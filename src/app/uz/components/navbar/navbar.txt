@@ -1,0 +1,74 @@
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { IoIosArrowDown } from "react-icons/io";
+
+export default function Navbar() {
+    const [activeMenu, setActiveMenu] = useState(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const handleMouseEnter = (index) => setActiveMenu(index);
+    const handleMouseLeave = () => setActiveMenu(null);
+    const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+    return (
+        <header className="navbar">
+            <div className="container">
+                <div className="navbar__inner">
+                    <div className="logo">
+                        <Link href="/">
+                            <img src="/images/logo.png" alt="logo" />
+                        </Link>
+                    </div>
+
+                    {/* Бургер-меню для мобильных устройств */}
+                    <div className="burger" onClick={toggleMobileMenu}>
+                        {isMobileMenuOpen ? <FiX size={30} color="#fff" /> : <FiMenu size={30} color="#fff" />}
+                    </div>
+
+                    <nav className={`navbar__menu ${isMobileMenuOpen ? 'active' : ''}`}>
+                        <ul className="navbar__list">
+                            <li className="navbar__item">
+                                <Link href="/" onClick={toggleMobileMenu}>Homepage</Link>
+                            </li>
+                            <li className="navbar__item">
+                                <Link href="/about" onClick={toggleMobileMenu}>About us</Link>
+                            </li>
+                            <li className="navbar__item" onMouseEnter={() => handleMouseEnter(0)} onMouseLeave={handleMouseLeave}>
+                                <Link href="#">Services <IoIosArrowDown className='navbar__arrow' /></Link>
+                                {activeMenu === 0 && (
+                                    <ul className="navbar__sub-list">
+                                        <li><Link href="/pricing" onClick={toggleMobileMenu}>Pricing plan</Link></li>
+                                        <li><Link href="/services/detail" onClick={toggleMobileMenu}>Detail Service</Link></li>
+                                    </ul>
+                                )}
+                            </li>
+                            <li className="navbar__item">
+                                <Link href="/portfolio" onClick={toggleMobileMenu}>Portfolio</Link>
+                            </li>
+                            <li className="navbar__item">
+                                <Link href="/contact" onClick={toggleMobileMenu}>Contact us</Link>
+                            </li>
+                            <li className="navbar__item" onMouseEnter={() => handleMouseEnter(1)} onMouseLeave={handleMouseLeave}>
+                                <Link href="#">Pages <IoIosArrowDown className='navbar__arrow' /></Link>
+                                {activeMenu === 1 && (
+                                    <ul className="navbar__sub-list">
+                                        <li><Link href="/team" onClick={toggleMobileMenu}>Team</Link></li>
+                                        <li><Link href="/faq" onClick={toggleMobileMenu}>FAQ</Link></li>
+                                        <li><Link href="/blog" onClick={toggleMobileMenu}>Blog Archive</Link></li>
+                                        <li><Link href="/post" onClick={toggleMobileMenu}>Single Post</Link></li>
+                                        <li><Link href="/404" onClick={toggleMobileMenu}>Error 404</Link></li>
+                                    </ul>
+                                )}
+                            </li>
+                        </ul>
+                        <button className="navbar__button">
+                            <Link href="/get-started" onClick={toggleMobileMenu}>Get Started</Link>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    );
+};
