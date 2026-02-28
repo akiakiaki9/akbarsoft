@@ -1,6 +1,18 @@
 const CASES = [
     {
         id: 1,
+        image: '/images/cases/case-11.png',
+        title: 'Веб сайт',
+        subtitle: 'SANTEX OPTOM в Бухаре - продажа сантехники душевые кабины, радиаторы отопления, унитазы, раковины, смесители.',
+        name: 'Santex Optom',
+        client: 'Santex Optom',
+        date: '27 February 2026',
+        location: 'Uzbekistan, Bukhara',
+        budget: '$400',
+        link: 'https://santexoptom.uz/'
+    },
+    {
+        id: 2,
         image: '/images/cases/case-10.png',
         title: 'Веб приложение',
         subtitle: 'Уголок Японии в Бухаре. Японская кухня, атмосфера и культура в одном месте.',
@@ -12,7 +24,7 @@ const CASES = [
         link: 'https://ginzaonodera.uz/'
     },
     {
-        id: 2,
+        id: 3,
         image: '/images/cases/cases-9.png',
         title: 'Web Site',
         subtitle: 'Fazza Burger - Офицальная страница сети бургерного в городе Бухара',
@@ -24,7 +36,7 @@ const CASES = [
         link: 'https://fazzaburger.uz/'
     },
     {
-        id: 3,
+        id: 4,
         image: '/images/cases/cases-6.png',
         title: 'Web Site',
         subtitle: 'Kinomano — быстро и надежно ищите информацию о фильмах и сериалах.',
@@ -36,7 +48,7 @@ const CASES = [
         link: 'https://kinomano.uz/'
     },
     {
-        id: 4,
+        id: 5,
         image: '/images/cases/cases-7.png',
         title: 'Web Site',
         subtitle: 'Ваш надежный партнер на рынке труда. Мы помогаем компаниям найти талантливых сотрудников, а кандидатам – интересную работу.',
@@ -48,7 +60,7 @@ const CASES = [
         link: 'https://ishcord.uz/'
     },
     {
-        id: 5,
+        id: 6,
         image: '/images/cases/cases-4.png',
         title: 'Web Site',
         subtitle: 'A law firm providing high-quality legal services to businesses and individuals.',
@@ -60,7 +72,7 @@ const CASES = [
         link: 'https://tlpartners.uz/'
     },
     {
-        id: 6,
+        id: 7,
         image: '/images/cases/cases-1.png',
         title: 'Web Site',
         subtitle: 'Learn About Oxford IELTS Center. Effectively tailor learning materials to students needs to achieve high results in IELTS and CEFR exams.',
