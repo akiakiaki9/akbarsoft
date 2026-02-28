@@ -20,4 +20,4 @@ export default function page() {
             <Footer />
         </div>
     )
-};w
+};
