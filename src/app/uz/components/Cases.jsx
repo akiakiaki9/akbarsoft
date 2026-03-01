@@ -1,51 +1,82 @@
 "use client"
-import React from 'react'
-import CASES from '../utils/cases'
+import React, { useState } from 'react'
+import CASES from '@/app/utils/cases'
 import Link from 'next/link'
+import { FiArrowRight, FiCalendar, FiMapPin, FiDollarSign, FiUser } from 'react-icons/fi'
 
 export default function Cases() {
+    const [hoveredId, setHoveredId] = useState(null);
+
     return (
         <div className='cases' id='cases'>
             <div className="cases-header">
-                <p>loyihalarimiz</p>
-                <h1>BIZ TOMONIMDAN AMALGA OSHIRILGAN LOYIHALAR</h1>
+                <span className="cases-header__badge">loyihalarimiz</span>
+                <h1 className="cases-header__title">BIZ TOMONIMDAN AMALGA OSHIRILGAN LOYIHALAR</h1>
+                <p className="cases-header__description">
+                    Bizning eng yaxshi loyihalarimiz bilan tanishing va ular haqida batafsil ma'lumot oling
+                </p>
             </div>
+
             <div className="main">
-                <div className="cases-blok">
-                    {CASES.map(item => (
-                        <div className="cases-blok__section" key={item.id}>
-                            <div className="cases-blok__section__header">
-                                <p>{item.title}</p>
-                                <h1>{item.name}</h1>
+                <div className="cases-grid">
+                    {CASES.map((item, index) => (
+                        <div
+                            className="cases-card"
+                            key={item.id}
+                            onMouseEnter={() => setHoveredId(item.id)}
+                            onMouseLeave={() => setHoveredId(null)}
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                        >
+                            <div className="cases-card__image-wrapper">
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="cases-card__image"
+                                />
+                                <div className={`cases-card__overlay ${hoveredId === item.id ? 'active' : ''}`}>
+                                    <span className="cases-card__category">{item.title}</span>
+                                    <h3 className="cases-card__title">{item.name}</h3>
+                                </div>
                             </div>
-                            <div className="cases-blok__section__container">
-                                <img src={item.image} alt={item.name} className="cases-blok__image" />
-                                <div className="cases-blok__section__container__main">
-                                    <div className="cases-blok__section__container-part">
+
+                            <div className="cases-card__content">
+                                <div className="cases-card__stats">
+                                    <div className="cases-card__stat">
+                                        <FiUser className="cases-card__stat-icon" />
                                         <div>
-                                            <p className='cases-blok__section__container-part__p-1'>Client</p>
-                                            <p className='cases-blok__section__container-part__p-2'>{item.client}</p>
-                                        </div>
-                                        <div>
-                                            <p className='cases-blok__section__container-part__p-1'>Date</p>
-                                            <p className='cases-blok__section__container-part__p-2'>{item.date}</p>
+                                            <span className="cases-card__stat-label">Client</span>
+                                            <span className="cases-card__stat-value">{item.client}</span>
                                         </div>
                                     </div>
-                                    <div className="cases-blok__section__container-part">
+                                    <div className="cases-card__stat">
+                                        <FiCalendar className="cases-card__stat-icon" />
                                         <div>
-                                            <p className='cases-blok__section__container-part__p-1'>Location</p>
-                                            <p className='cases-blok__section__container-part__p-2'>{item.location}</p>
-                                        </div>
-                                        <div>
-                                            <p className='cases-blok__section__container-part__p-1'>Budget</p>
-                                            <p className='cases-blok__section__container-part__p-2'>{item.budget}</p>
+                                            <span className="cases-card__stat-label">Date</span>
+                                            <span className="cases-card__stat-value">{item.date}</span>
                                         </div>
                                     </div>
-                                    <div className="cases-blok__section__container__footer">
-                                        <p>{item.subtitle}</p>
-                                        <Link href={item.link}><button className='grad-button'>LOOK</button></Link>
+                                    <div className="cases-card__stat">
+                                        <FiMapPin className="cases-card__stat-icon" />
+                                        <div>
+                                            <span className="cases-card__stat-label">Location</span>
+                                            <span className="cases-card__stat-value">{item.location}</span>
+                                        </div>
+                                    </div>
+                                    <div className="cases-card__stat">
+                                        <FiDollarSign className="cases-card__stat-icon" />
+                                        <div>
+                                            <span className="cases-card__stat-label">Budget</span>
+                                            <span className="cases-card__stat-value">{item.budget}</span>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <p className="cases-card__description">{item.subtitle}</p>
+
+                                <Link href={item.link} className="cases-card__link">
+                                    <span>Batafsil ko'rish</span>
+                                    <FiArrowRight className="cases-card__link-icon" />
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -53,4 +84,4 @@ export default function Cases() {
             </div>
         </div>
     )
-};
+}

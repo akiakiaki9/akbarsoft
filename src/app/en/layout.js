@@ -1,7 +1,7 @@
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Akbar Soft | Website Creation and Design",
+  title: "Akbar Soft | Website Creation and Internet services",
   description: "We are a team of freelancers developing websites, web designs, and more.",
   keywords: "Freelance, websites, create website, sayt yasash, sayt zakaz, web-site, create web-site, website development, online store development, order website, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company",
   robots: "index, follow",

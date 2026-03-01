@@ -71,18 +71,6 @@ const CASES = [
         budget: '$200',
         link: 'https://tlpartners.uz/'
     },
-    {
-        id: 7,
-        image: '/images/cases/cases-1.png',
-        title: 'Web Site',
-        subtitle: 'Learn About Oxford IELTS Center. Effectively tailor learning materials to students needs to achieve high results in IELTS and CEFR exams.',
-        name: 'Oxford IELTS Center',
-        client: 'Ergashev Khudoyor',
-        date: '1 Dec 2024',
-        location: 'Uzbekistan, Bukhara',
-        budget: '$300',
-        link: 'https://oxfordieltscenter.uz/'
-    },
 ]
 
 export default CASES;
