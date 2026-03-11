@@ -1,14 +1,14 @@
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Akbar Soft | Создание сайтов и интернет услуг",
-  description: "Мы команда фрилансеров разрабатываем веб-сайты, веб-дизайны и т.д.",
-  keywords: "Freelance, сайты, делать сайт, sayt taxlash, sayt zakaz, веб-сайт, создать веб-сайт, разработка веб-сайтов, разработка онлайн магазина, заказать веб-сайт, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания",
+  title: "Akbar Soft | Создание веб-сайтов, телеграм ботов и мини приложений",
+  description: "Мы команда фрилансеров разрабатываем веб-сайты, телеграм боты и мини приложения",
+  keywords: "Freelance, сайты, делать сайт, sayt taxlash, sayt zakaz, веб-сайт, создать веб-сайт, разработка веб-сайтов, разработка онлайн магазина, заказать веб-сайт, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания, telegram bot, телеграм бот, телеграм приложение, заказать телеграм бот",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/",
   openGraph: {
     title: "Akbar Soft",
-    description: "Мы команда фрилансеров разрабатываем веб-сайты, веб-дизайны и т.д.",
+    description: "Мы команда фрилансеров разрабатываем веб-сайты, телеграм боты и мини приложения",
     url: "https://akbarsoft.uz/",
     type: "website",
     locale: "uz_UZ",
@@ -18,7 +18,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Akbar Soft",
-    description: "Мы команда фрилансеров разрабатываем веб-сайты, веб-дизайны и т.д.",
+    description: "Мы команда фрилансеров разрабатываем веб-сайты, телеграм боты и мини приложения",
   },
 };
 

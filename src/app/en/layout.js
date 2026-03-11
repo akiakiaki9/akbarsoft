@@ -2,13 +2,13 @@ import Script from 'next/script'
 
 export const metadata = {
   title: "Akbar Soft | Website Creation and Internet services",
-  description: "We are a team of freelancers developing websites, web designs, and more.",
-  keywords: "Freelance, websites, create website, sayt yasash, sayt zakaz, web-site, create web-site, website development, online store development, order website, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company",
+  description: "We are a team of freelancers specializing in the development of websites, Telegram bots, and mini apps.",
+  keywords: "Freelance, сайты, делать сайт, sayt taxlash, sayt zakaz, веб-сайт, создать веб-сайт, разработка веб-сайтов, разработка онлайн магазина, заказать веб-сайт, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания, telegram bot, телеграм бот, телеграм приложение, заказать телеграм бот",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/en",
   openGraph: {
     title: "Akbar Soft",
-    description: "We are a team of freelancers developing websites, web designs, and more.",
+    description: "We are a team of freelancers specializing in the development of websites, Telegram bots, and mini apps.",
     url: "https://akbarsoft.uz/en",
     type: "website",
     locale: "uz_UZ",
@@ -18,7 +18,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Akbar Soft",
-    description: "We are a team of freelancers developing websites, web designs, and more.",
+    description: "We are a team of freelancers specializing in the development of websites, Telegram bots, and mini apps.",
   },
 };
 

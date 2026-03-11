@@ -1,14 +1,14 @@
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Akbar Soft | Veb-saytlar va internet xizmatlar",
-  description: "Biz freelancerlar jamoasi veb-saytlar, veb-dizaynlar va boshqalarni ishlab chiqamiz.",
-  keywords: "Freelance, saytlar, sayt yaratish, sayt yasash, sayt zakaz, veb-sayt, veb-sayt yaratish, veb-sayt ishlab chiqish, onlayn do'kon yaratish, veb-sayt buyurtma qilish, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company",
+  title: "Akbar Soft | Veb-sayt, Telegram botlar va mini ilovalar yaratish",
+  description: "Biz veb-saytlar, Telegram botlar va mini ilovalar ishlab chiquvchi frilanserlar jamoasimiz.",
+  keywords: "Freelance, сайты, делать сайт, sayt taxlash, sayt zakaz, веб-сайт, создать веб-сайт, разработка веб-сайтов, разработка онлайн магазина, заказать веб-сайт, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания, telegram bot, телеграм бот, телеграм приложение, заказать телеграм бот",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/uz/",
   openGraph: {
     title: "Akbar Soft",
-    description: "Biz freelancerlar jamoasi veb-saytlar, veb-dizaynlar va boshqalarni ishlab chiqamiz.",
+    description: "Biz veb-saytlar, Telegram botlar va mini ilovalar ishlab chiquvchi frilanserlar jamoasimiz.",
     url: "https://akbarsoft.uz/uz/",
     type: "website",
     locale: "uz_UZ",
@@ -18,7 +18,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Akbar Soft",
-    description: "Biz freelancerlar jamoasi veb-saytlar, veb-dizaynlar va boshqalarni ishlab chiqamiz.",
+    description: "Biz veb-saytlar, Telegram botlar va mini ilovalar ishlab chiquvchi frilanserlar jamoasimiz.",
   },
 };
 
