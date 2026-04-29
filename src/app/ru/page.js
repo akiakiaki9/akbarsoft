@@ -1,12 +1,10 @@
 import Cases from "./components/Cases";
-import Carousel from "./components/carousel/Carousel";
+import Carousel from "./components/carousel/ReviewCarousel";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
-import Offers from "./components/offers/Offers";
-import Section3 from "./components/section/Section3";
+import RequestForm from "./components/requestForm/RequestForm";
 import Faq from "./faq/Faq";
-import PricingPlan from "./pricing-plan/PricingPlan";
 
 export default function Home() {
 
@@ -14,10 +12,8 @@ export default function Home() {
     <div>
       <Navbar />
       <Header />
-      <Section3 />
       <Cases />
-      <Offers />
-      <PricingPlan />
+      <RequestForm />
       <Carousel />
       <Faq />
       <Footer />

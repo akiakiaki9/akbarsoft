@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.8.1",
+    "framer-motion": "^12.38.0",
     "i18next-http-backend": "^3.0.2",
     "next": "^16.1.6",
     "next-sitemap": "^4.2.3",

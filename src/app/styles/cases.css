@@ -1,63 +1,109 @@
 .cases {
-    padding: 60px 0;
-    background: linear-gradient(180deg, #0A0118 0%, #1a1035 100%);
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--bg-color) 0%, #1a1035 100%);
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Header секция - более компактная */
+/* Декоративные элементы фона */
+.cases::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--purple-color), var(--violet-color), transparent);
+}
+
+.cases::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(180, 124, 253, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Header секция */
 .cases-header {
     text-align: center;
-    padding: 20px 20px 40px;
+    padding: 20px 20px 60px;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .cases-header__badge {
     display: inline-block;
-    padding: 8px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    font-size: 14px;
+    padding: 8px 24px;
+    background: linear-gradient(135deg, var(--violet-color) 0%, var(--purple-color) 100%);
+    color: #fff;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 30px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(180, 124, 253, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cases-header__title {
     font-size: 42px;
-    color: white;
+    color: #fff;
     margin-bottom: 15px;
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
+    background: linear-gradient(135deg, #fff, var(--purple-color), var(--violet-color));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .cases-header__description {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-color);
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;
+    font-family: var(--p-ff);
 }
 
-/* Сетка проектов - 3 колонки для лучшей плотности */
+/* Сетка проектов */
 .cases-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 30px;
     padding: 20px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.cases-grid.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Карточка проекта */
 .cases-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-light-color);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
@@ -76,8 +122,8 @@
 
 .cases-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(102, 126, 234, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(102, 126, 234, 0.3);
+    border-color: var(--violet-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(180, 124, 253, 0.2);
 }
 
 /* Обертка изображения */
@@ -105,8 +151,8 @@
     left: 0;
     right: 0;
     padding: 30px 20px 20px;
-    background: linear-gradient(to top, rgba(10, 3, 22, 0.95), transparent);
-    color: white;
+    background: linear-gradient(to top, rgba(10, 1, 24, 0.95), transparent);
+    color: #fff;
     transform: translateY(70%);
     transition: transform 0.4s ease;
 }
@@ -118,9 +164,9 @@
 .cases-card__category {
     display: inline-block;
     padding: 4px 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--violet-color) 0%, var(--purple-color) 100%);
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -136,28 +182,28 @@
 
 /* Контент карточки */
 .cases-card__content {
-    padding: 20px;
+    padding: 24px;
 }
 
 /* Статистика в сетке 2x2 */
 .cases-card__stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 16px;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-light-color);
 }
 
 .cases-card__stat {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .cases-card__stat-icon {
     font-size: 18px;
-    color: #667eea;
+    color: var(--violet-color);
     min-width: 18px;
 }
 
@@ -168,14 +214,14 @@
 
 .cases-card__stat-label {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .cases-card__stat-value {
     font-size: 14px;
-    color: white;
+    color: #fff;
     font-weight: 600;
 }
 
@@ -183,12 +229,13 @@
 .cases-card__description {
     font-size: 14px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
     margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-family: var(--p-ff);
 }
 
 /* Ссылка "Подробнее" */
@@ -196,20 +243,21 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--violet-color) 0%, var(--purple-color) 100%);
+    color: #fff;
     text-decoration: none;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 600;
     transition: all 0.3s ease;
     width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cases-card__link:hover {
     gap: 12px;
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 20px rgba(180, 124, 253, 0.3);
     transform: scale(1.05);
 }
 
@@ -221,20 +269,26 @@
     transform: translateX(5px);
 }
 
-/* Адаптивность */
+/* ========== АДАПТИВНОСТЬ ========== */
 @media (max-width: 1200px) {
     .cases-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 }
 
 @media (max-width: 768px) {
     .cases {
-        padding: 40px 0;
+        padding: 50px 0;
     }
 
     .cases-header {
-        padding: 20px;
+        padding: 20px 20px 40px;
+    }
+
+    .cases-header__badge {
+        font-size: 11px;
+        padding: 6px 18px;
     }
 
     .cases-header__title {
@@ -242,25 +296,29 @@
     }
 
     .cases-header__description {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .cases-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
     }
 
     .cases-card__overlay {
         transform: translateY(0);
-        background: linear-gradient(to top, rgba(10, 3, 22, 0.98), rgba(10, 3, 22, 0.8));
+        background: linear-gradient(to top, rgba(10, 1, 24, 0.98), rgba(10, 1, 24, 0.8));
     }
 
     .cases-card__category {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .cases-card__title {
         font-size: 18px;
+    }
+
+    .cases-card__content {
+        padding: 20px;
     }
 
     .cases-card__stats {
@@ -277,29 +335,43 @@
 
     .cases-card__description {
         font-size: 13px;
-        margin-bottom: 15px;
+        margin-bottom: 16px;
     }
 
     .cases-card__link {
-        padding: 8px 16px;
+        padding: 8px 20px;
         font-size: 13px;
+    }
+}
+
+/* Планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cases-header__title {
+        font-size: 36px;
+    }
+    
+    .cases-card__title {
+        font-size: 18px;
+    }
+    
+    .cases-card__content {
+        padding: 20px;
     }
 }
 
 /* Для очень маленьких экранов */
 @media (max-width: 480px) {
-    .cases-header__badge {
-        font-size: 12px;
-        padding: 6px 16px;
-    }
-
     .cases-header__title {
         font-size: 24px;
     }
 
+    .cases-header__description {
+        font-size: 14px;
+    }
+
     .cases-card__stats {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 12px;
     }
 
     .cases-card__stat {
@@ -313,9 +385,47 @@
     }
 }
 
-/* Анимация для карточек при скролле */
-@media (prefers-reduced-motion: no-preference) {
+/* Для устройств с reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .cases-card,
+    .cases-card__image,
+    .cases-card__overlay,
+    .cases-card__link,
+    .cases-grid {
+        transition: none;
+        animation: none;
+        transform: none;
+    }
+    
     .cases-card {
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 1;
+    }
+    
+    .cases-grid {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Скелетон загрузки */
+.cases-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.cases-loading__spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--border-light-color);
+    border-top-color: var(--violet-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
