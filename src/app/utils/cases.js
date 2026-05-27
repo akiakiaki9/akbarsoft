@@ -27,13 +27,13 @@ const CASES = [
         id: 3,
         image: '/images/cases/case-13.png',
         title: 'Веб сайт',
-        subtitle: 'DEBORA CERAMICA | Крупный магазин сантехники в Ташкенте',
-        name: 'DEBORA CERAMICA',
-        client: 'DEBORA CERAMICA',
+        subtitle: 'SANTEX MASTER GOLD | Крупный оптовик сантехники в Самарканде',
+        name: 'SANTEX MASTER GOLD',
+        client: 'SANTEX MASTER GOLD',
         date: '19 March 2026',
-        location: 'Uzbekistan, Tashkent',
-        budget: '$600',
-        link: 'https://deboraceramica.uz/'
+        location: 'Uzbekistan, Samarkand',
+        budget: '$200',
+        link: 'https://santexmastergold.uz/'
     },
     {
         id: 4,
