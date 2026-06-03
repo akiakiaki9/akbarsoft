@@ -71,7 +71,7 @@ export default function Contacts() {
         setIsLoading(true);
         
         try {
-            const response = await fetch('/api/contacts', {
+            const response = await fetch('/api/send-review', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

@@ -26,6 +26,7 @@ export default function RequestForm() {
         setSubmitStatus('');
 
         try {
+            // Отправляем на правильный API endpoint
             const response = await fetch('/api/send-request', {
                 method: 'POST',
                 headers: {
@@ -150,7 +151,7 @@ export default function RequestForm() {
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         required
-                                        placeholder="Телефон"
+                                        placeholder="Телефон *"
                                     />
                                 </div>
                                 <div className="form-group">
