@@ -29,16 +29,30 @@ export default function Contacts() {
         setIsLoading(true);
 
         try {
+            console.log('Sending data to API...', formData);
+            
             const response = await fetch('/api/contacts', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify(formData)
             });
+
+            console.log('Response status:', response.status);
+            
+            // Проверяем, вернулся ли JSON
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                const text = await response.text();
+                console.error('Non-JSON response:', text.substring(0, 200));
+                throw new Error('Server returned non-JSON response');
+            }
 
             const data = await response.json();
 
             if (response.ok) {
-                alert('Message sent successfully!');
+                alert('✅ Message sent successfully!');
                 setFormData({
                     theme: "CONTACTS (FOR FEEDBACK)",
                     name: '',
@@ -49,11 +63,11 @@ export default function Contacts() {
                     message: ''
                 });
             } else {
-                alert(data.error || 'Failed to send message. Please try again.');
+                alert(`❌ ${data.error || 'Failed to send message. Please try again.'}`);
             }
         } catch (error) {
-            console.error('Error sending message:', error);
-            alert('Failed to send message. Please check your internet connection.');
+            console.error('Form submission error:', error);
+            alert('❌ Failed to send message. Please try again later.');
         } finally {
             setIsLoading(false);
         }
@@ -201,5 +215,5 @@ export default function Contacts() {
                 </div>
             </div>
         </div>
-    )
-};
+    );
+}

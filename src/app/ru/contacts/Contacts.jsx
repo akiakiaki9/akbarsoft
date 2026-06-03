@@ -77,6 +77,12 @@ export default function Contacts() {
                 body: JSON.stringify(formData)
             });
 
+            // Проверяем, вернулся ли JSON
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Server returned non-JSON response');
+            }
+
             const data = await response.json();
 
             if (response.ok) {
