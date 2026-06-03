@@ -17,34 +17,91 @@ export default function Contacts() {
         subject: '',
         message: ''
     });
+    
+    const [isLoading, setIsLoading] = useState(false);
+    const [formErrors, setFormErrors] = useState({});
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        // Очищаем ошибку для этого поля при вводе
+        if (formErrors[name]) {
+            setFormErrors({ ...formErrors, [name]: '' });
+        }
+    };
+
+    const validateForm = () => {
+        const errors = {};
+        
+        if (!formData.name.trim() || formData.name.length < 3) {
+            errors.name = 'Имя должно содержать минимум 3 символа';
+        }
+        
+        if (!formData.phone.trim()) {
+            errors.phone = 'Введите номер телефона';
+        } else if (!/^[\+\d\s\(\)-]{9,}$/.test(formData.phone)) {
+            errors.phone = 'Введите корректный номер телефона';
+        }
+        
+        if (!formData.email.trim()) {
+            errors.email = 'Введите email';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            errors.email = 'Введите корректный email адрес';
+        }
+        
+        if (!formData.subject.trim() || formData.subject.length < 5) {
+            errors.subject = 'Тема должна содержать минимум 5 символов';
+        }
+        
+        if (!formData.message.trim() || formData.message.length < 10) {
+            errors.message = 'Сообщение должно содержать минимум 10 символов';
+        }
+        
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const response = await fetch('https://formspree.io/f/mpwaljag', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
-
-        if (response.ok) {
-            alert('Message sent successfully!');
-            setFormData({
-                name: '',
-                company: '',
-                phone: '',
-                email: '',
-                subject: '',
-                message: ''
+        
+        if (!validateForm()) {
+            return;
+        }
+        
+        setIsLoading(true);
+        
+        try {
+            const response = await fetch('/api/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
             });
-        } else {
-            alert('Failed to send message.');
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('✅ Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.');
+                setFormData({
+                    theme: "CONTACTS (FOR FEEDBACK)",
+                    name: '',
+                    company: '',
+                    phone: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+                setFormErrors({});
+            } else {
+                alert(`❌ ${data.error || 'Не удалось отправить сообщение. Пожалуйста, попробуйте позже.'}`);
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('❌ Произошла ошибка при отправке. Пожалуйста, проверьте подключение к интернету.');
+        } finally {
+            setIsLoading(false);
         }
     };
+    
     return (
         <div className='contacts'>
             <div className="main">
@@ -134,10 +191,10 @@ export default function Contacts() {
                         <div className="contacts-blok__section-1__footer">
                             <h2>Мы в социальных сетях</h2>
                             <div className="contacts-blok__section-1__footer__container">
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/by.tillayev/?utm_source=ig_web_button_share_sheet">
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/by.tillayev/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
                                     <FaInstagram className='footer-blok__section-1__icon' />
                                 </a>
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft">
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft" target="_blank" rel="noopener noreferrer">
                                     <FaTelegramPlane className='footer-blok__section-1__icon' />
                                 </a>
                             </div>
@@ -147,43 +204,105 @@ export default function Contacts() {
                         <form className='contacts-form' onSubmit={handleSubmit}>
                             <h1>Отправьте нам сообщение</h1>
                             <p>Пожалуйста, не стесняйтесь отправлять нам вопросы, отзывы или предложения.</p>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Имя</label>
-                                    <input minLength={3} type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Имя" required />
+                                    <label>Имя *</label>
+                                    <input 
+                                        minLength={3} 
+                                        type="text" 
+                                        name="name" 
+                                        value={formData.name} 
+                                        onChange={handleChange} 
+                                        placeholder="Имя" 
+                                        required 
+                                        className={formErrors.name ? 'error' : ''}
+                                    />
+                                    {formErrors.name && <span className="error-message">{formErrors.name}</span>}
                                 </div>
                                 <div className="contacts-form__section-part">
                                     <label>Компания</label>
-                                    <input minLength={2} type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Компания" required />
+                                    <input 
+                                        minLength={2} 
+                                        type="text" 
+                                        name="company" 
+                                        value={formData.company} 
+                                        onChange={handleChange} 
+                                        placeholder="Компания" 
+                                    />
                                 </div>
                             </div>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Телефон</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Телефон" required />
+                                    <label>Телефон *</label>
+                                    <input 
+                                        type="tel" 
+                                        name="phone" 
+                                        value={formData.phone} 
+                                        onChange={handleChange} 
+                                        placeholder="+998 XX XXX XX XX" 
+                                        required 
+                                        className={formErrors.phone ? 'error' : ''}
+                                    />
+                                    {formErrors.phone && <span className="error-message">{formErrors.phone}</span>}
                                 </div>
                                 <div className="contacts-form__section-part">
-                                    <label>Email</label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
+                                    <label>Email *</label>
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        value={formData.email} 
+                                        onChange={handleChange} 
+                                        placeholder="example@mail.com" 
+                                        required 
+                                        className={formErrors.email ? 'error' : ''}
+                                    />
+                                    {formErrors.email && <span className="error-message">{formErrors.email}</span>}
                                 </div>
                             </div>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Тема</label>
-                                    <input minLength={5} type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Тема" required />
+                                    <label>Тема *</label>
+                                    <input 
+                                        minLength={5} 
+                                        type="text" 
+                                        name="subject" 
+                                        value={formData.subject} 
+                                        onChange={handleChange} 
+                                        placeholder="Тема сообщения" 
+                                        required 
+                                        className={formErrors.subject ? 'error' : ''}
+                                    />
+                                    {formErrors.subject && <span className="error-message">{formErrors.subject}</span>}
                                 </div>
                             </div>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Сообщение</label>
-                                    <textarea minLength={10} name="message" value={formData.message} onChange={handleChange} placeholder="Сообщение" required />
+                                    <label>Сообщение *</label>
+                                    <textarea 
+                                        minLength={10} 
+                                        name="message" 
+                                        value={formData.message} 
+                                        onChange={handleChange} 
+                                        placeholder="Ваше сообщение..." 
+                                        required 
+                                        rows={5}
+                                        className={formErrors.message ? 'error' : ''}
+                                    />
+                                    {formErrors.message && <span className="error-message">{formErrors.message}</span>}
                                 </div>
                             </div>
-                            <button type='submit'>ОТПРАВИТЬ СООБЩЕНИЕ</button>
+                            
+                            <button type='submit' disabled={isLoading}>
+                                {isLoading ? 'ОТПРАВКА...' : 'ОТПРАВИТЬ СООБЩЕНИЕ'}
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     )
-};
+}

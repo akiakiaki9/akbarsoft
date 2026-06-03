@@ -17,6 +17,8 @@ export default function Contacts() {
         subject: '',
         message: ''
     });
+    
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,27 +26,39 @@ export default function Contacts() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
 
-        const response = await fetch('https://formspree.io/f/mpwaljag', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
-
-        if (response.ok) {
-            alert('Message sent successfully!');
-            setFormData({
-                name: '',
-                company: '',
-                phone: '',
-                email: '',
-                subject: '',
-                message: ''
+        try {
+            const response = await fetch('/api/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
             });
-        } else {
-            alert('Failed to send message.');
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                setFormData({
+                    theme: "CONTACTS (FOR FEEDBACK)",
+                    name: '',
+                    company: '',
+                    phone: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                alert(data.error || 'Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('Failed to send message. Please check your internet connection.');
+        } finally {
+            setIsLoading(false);
         }
     };
+
     return (
         <div className='contacts'>
             <div className="main">
@@ -179,7 +193,9 @@ export default function Contacts() {
                                     <textarea minLength={10} name="message" value={formData.message} onChange={handleChange} placeholder="Message" required />
                                 </div>
                             </div>
-                            <button type='submit'>SEND MESSAGE</button>
+                            <button type='submit' disabled={isLoading}>
+                                {isLoading ? 'SENDING...' : 'SEND MESSAGE'}
+                            </button>
                         </form>
                     </div>
                 </div>
