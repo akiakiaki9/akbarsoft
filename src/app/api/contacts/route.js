@@ -4,46 +4,37 @@ export async function POST(request) {
     try {
         const { name, company, phone, email, subject, message, theme } = await request.json();
 
-        // Валидация (обновлена под поля вашей формы)
+        // Validation
         if (!name || !phone || !email || !subject || !message) {
             return NextResponse.json(
-                { error: 'Пожалуйста, заполните все обязательные поля' },
+                { error: 'Please fill in all required fields' },
                 { status: 400 }
             );
         }
 
-        // Валидация email
+        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             return NextResponse.json(
-                { error: 'Введите корректный email адрес' },
+                { error: 'Please enter a valid email address' },
                 { status: 400 }
             );
         }
 
-        // Валидация телефона (минимальная)
-        const phoneRegex = /^[\+\d\s\(\)-]{9,}$/;
-        if (!phoneRegex.test(phone)) {
-            return NextResponse.json(
-                { error: 'Введите корректный номер телефона' },
-                { status: 400 }
-            );
-        }
-
-        // Получаем данные из .env
+        // Get data from .env (Vercel Environment Variables)
         const botToken = process.env.TELEGRAM_BOT_TOKEN;
         const chatId = process.env.TELEGRAM_CHAT_ID;
 
         if (!botToken || !chatId) {
             console.error('Telegram credentials not found');
             return NextResponse.json(
-                { error: 'Ошибка конфигурации сервера' },
+                { error: 'Server configuration error' },
                 { status: 500 }
             );
         }
 
-        // Формируем сообщение для Telegram
-        const currentDate = new Date().toLocaleString('ru-RU', {
+        // Format message for Telegram
+        const currentDate = new Date().toLocaleString('en-US', {
             timeZone: 'Asia/Tashkent',
             day: '2-digit',
             month: '2-digit',
@@ -54,32 +45,32 @@ export async function POST(request) {
         });
 
         const telegramMessage = `
-💬 <b>НОВОЕ СООБЩЕНИЕ С САЙТА</b> 💬
+💬 <b>NEW MESSAGE FROM WEBSITE</b> 💬
 
 ━━━━━━━━━━━━━━━━━━━━
-📋 <b>ИНФОРМАЦИЯ О КЛИЕНТЕ</b>
+📋 <b>CLIENT INFORMATION</b>
 ━━━━━━━━━━━━━━━━━━━━
-👤 <b>Имя:</b> ${escapeHtml(name)}
-🏢 <b>Компания:</b> ${escapeHtml(company || 'Не указана')}
-📱 <b>Телефон:</b> ${escapeHtml(phone)}
+👤 <b>Name:</b> ${escapeHtml(name)}
+🏢 <b>Company:</b> ${escapeHtml(company || 'Not specified')}
+📱 <b>Phone:</b> ${escapeHtml(phone)}
 📧 <b>Email:</b> ${escapeHtml(email)}
 
 ━━━━━━━━━━━━━━━━━━━━
-📝 <b>ДЕТАЛИ СООБЩЕНИЯ</b>
+📝 <b>MESSAGE DETAILS</b>
 ━━━━━━━━━━━━━━━━━━━━
-🏷 <b>Тема:</b> ${escapeHtml(subject)}
-📄 <b>Сообщение:</b>
+🏷 <b>Subject:</b> ${escapeHtml(subject)}
+📄 <b>Message:</b>
 ${escapeHtml(message)}
 
 ━━━━━━━━━━━━━━━━━━━━
-⏰ <b>Время заявки:</b> ${currentDate}
-🔖 <b>Тип формы:</b> ${theme || 'CONTACTS (FOR FEEDBACK)'}
+⏰ <b>Time:</b> ${currentDate}
+🔖 <b>Form Type:</b> ${theme || 'CONTACTS (FOR FEEDBACK)'}
 ━━━━━━━━━━━━━━━━━━━━
 
-<a href="tel:${phone.replace(/[^\d+]/g, '')}">📞 Позвонить клиенту</a> | <a href="mailto:${email}">✉️ Написать клиенту</a>
+<a href="tel:${phone.replace(/[^\d+]/g, '')}">📞 Call client</a> | <a href="mailto:${email}">✉️ Email client</a>
         `;
 
-        // Отправляем в Telegram
+        // Send to Telegram
         const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
         const response = await fetch(telegramUrl, {
             method: 'POST',
@@ -98,27 +89,27 @@ ${escapeHtml(message)}
 
         if (!response.ok) {
             console.error('Telegram API error:', telegramResponse);
-            throw new Error('Failed to send message to Telegram');
+            return NextResponse.json(
+                { error: 'Failed to send message to Telegram' },
+                { status: 500 }
+            );
         }
 
-        // Отправляем подтверждение клиенту
-        await sendConfirmationToTelegram(name, email, subject, message, phone);
-
         return NextResponse.json(
-            { success: true, message: 'Сообщение успешно отправлено' },
+            { success: true, message: 'Message sent successfully' },
             { status: 200 }
         );
 
     } catch (error) {
         console.error('Error processing request:', error);
         return NextResponse.json(
-            { error: 'Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.' },
+            { error: 'Internal server error. Please try again later.' },
             { status: 500 }
         );
     }
 }
 
-// Функция для экранирования HTML (безопаснее, чем Markdown)
+// HTML escape function for security
 function escapeHtml(text) {
     if (!text) return '';
     const htmlEntities = {
@@ -131,55 +122,7 @@ function escapeHtml(text) {
     return text.replace(/[&<>"']/g, (char) => htmlEntities[char]);
 }
 
-// Функция отправки подтверждения клиенту в Telegram
-async function sendConfirmationToTelegram(name, email, subject, message, phone) {
-    try {
-        const botToken = process.env.TELEGRAM_BOT_TOKEN;
-        const adminChatId = process.env.TELEGRAM_CHAT_ID;
-
-        if (!botToken || !adminChatId) return;
-
-        const confirmationMessage = `
-✅ <b>Ваше сообщение получено!</b>
-
-Здравствуйте, ${escapeHtml(name)}!
-
-Мы получили ваше сообщение и свяжемся с вами в ближайшее время.
-
-<b>Копия вашего сообщения:</b>
-━━━━━━━━━━━━━━━━━━━━
-📝 <b>Тема:</b> ${escapeHtml(subject)}
-📄 <b>Текст:</b>
-${escapeHtml(message)}
-━━━━━━━━━━━━━━━━━━━━
-
-<b>Ваши контактные данные:</b>
-📧 Email: ${escapeHtml(email)}
-📱 Телефон: ${escapeHtml(phone)}
-
-С уважением, команда Akbar Soft
-
-⏰ Ожидайте ответа в течение 24 часов
-        `;
-
-        // Отправляем подтверждение в тот же чат (как уведомление для админа)
-        // Если нужно отправить клиенту, нужно знать его Telegram ID
-        // или использовать альтернативный метод (SMS, Email)
-        
-        console.log(`Confirmation would be sent to ${email}`);
-        
-        // Здесь можно интегрировать отправку email через:
-        // - Resend (рекомендуется для Next.js)
-        // - SendGrid
-        // - Mailgun
-        // - Amazon SES
-        
-    } catch (error) {
-        console.error('Confirmation sending error:', error);
-    }
-}
-
-// Обработка OPTIONS запроса для CORS (если нужно)
+// Handle OPTIONS request for CORS
 export async function OPTIONS() {
     return new NextResponse(null, {
         status: 200,
