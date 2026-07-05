@@ -1,25 +1,27 @@
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Akbar Soft | Website Creation and Internet services",
-  description: "We are a team of freelancers specializing in the development of websites, Telegram bots, and mini apps.",
-  keywords: "Freelance, сайты, делать сайт, sayt taxlash, sayt zakaz, веб-сайт, создать веб-сайт, разработка веб-сайтов, разработка онлайн магазина, заказать веб-сайт, IT Company, Business, uz, Uzbekistan, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, bukhara, bukhara it company, it company, akbar soft it company, Фриланс, IT компания, Бизнес, uz, Узбекистан, Akbar, Soft, Akbar Soft, Akbar Soft uz, soft uz, Бухара, Бухарская it компания, it компания, akbar soft it компания, telegram bot, телеграм бот, телеграм приложение, заказать телеграм бот",
+  title: "Order Website, Telegram Bot & Design | Akbar Soft",
+  description: "Order professional website development, Telegram bot creation, and UI/UX design in Uzbekistan. We offer turnkey solutions for your business in Bukhara, Tashkent and worldwide.",
+  keywords: "order website, website development, create website, order web design, order telegram bot, telegram bot development, ui ux design, web development Uzbekistan, freelance web developer, buy website, website builder, bot developer, design services, it company Uzbekistan, akbar soft, bukhara it, заказать сайт, разработка сайтов, заказать телеграм бота, заказать дизайн",
   robots: "index, follow",
   canonical: "https://akbarsoft.uz/en",
   openGraph: {
-    title: "Akbar Soft",
-    description: "We are a team of freelancers specializing in the development of websites, Telegram bots, and mini apps.",
+    title: "Order Website, Telegram Bot & Design | Akbar Soft",
+    description: "Professional development of websites, Telegram bots, and UI/UX design. Turnkey solutions in Uzbekistan.",
     url: "https://akbarsoft.uz/en",
     type: "website",
-    locale: "uz_UZ",
-    locale: "ru_RU",
     locale: "en_US",
+    siteName: "Akbar Soft",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akbar Soft",
-    description: "We are a team of freelancers specializing in the development of websites, Telegram bots, and mini apps.",
+    title: "Order Website, Telegram Bot & Design | Akbar Soft",
+    description: "Professional web development, Telegram bots, and design services in Uzbekistan.",
   },
+  other: {
+    "yandex-verification": "f201683b2288240d",
+  }
 };
 
 export default function RootLayout({ children }) {
@@ -30,6 +32,32 @@ export default function RootLayout({ children }) {
         <meta name="yandex-verification" content="f201683b2288240d" />
         <meta name="msvalidate.01" content="9727FEB9B9A0FBF3F14C214D959E9BB5" />
         <link rel="icon" href="/images/logo-website.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Akbar Soft",
+              "url": "https://akbarsoft.uz/en",
+              "logo": "https://akbarsoft.uz/images/logo-website.png",
+              "description": "Professional website development, Telegram bot creation, and UI/UX design services in Uzbekistan.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bukhara",
+                "addressCountry": "UZ"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Order services",
+                "availableLanguage": ["English", "Russian", "Uzbek"]
+              },
+              "sameAs": [
+                "https://t.me/akbar_soft"
+              ]
+            })
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-TVGXYSNSY9"
           strategy="afterInteractive"
@@ -47,6 +75,11 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body>
+        {/* 6. СКРЫТЫЙ H1 ДЛЯ ПОИСКОВИКОВ (английский) */}
+        <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', border: 0 }}>
+          Order website, Telegram bot and design - Akbar Soft
+        </h1>
+
         {children}
       </body>
     </html>

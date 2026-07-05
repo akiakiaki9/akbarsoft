@@ -167,9 +167,6 @@ export default function Contacts() {
                                             Телефон номер
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Phone : +998 88 558 93 00
-                                        </p>
-                                        <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             Fax : +998 50 095 33 31
                                         </p>
                                     </div>
@@ -197,7 +194,7 @@ export default function Contacts() {
                         <div className="contacts-blok__section-1__footer">
                             <h2>Мы в социальных сетях</h2>
                             <div className="contacts-blok__section-1__footer__container">
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/by.tillayev/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/akbarsoft.uz/" target="_blank" rel="noopener noreferrer">
                                     <FaInstagram className='footer-blok__section-1__icon' />
                                 </a>
                                 <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft" target="_blank" rel="noopener noreferrer">

@@ -109,9 +109,9 @@ function NavbarContent() {
                             </ul>
                         </div>
 
-                        {/* <div className="navbar__lang">
+                        <div className="navbar__lang">
                             <LanguageSwitcher />
-                        </div> */}
+                        </div>
                         
                         <div className="burger" onClick={toggleMobileMenu}>
                             {isMobileMenuOpen ? <FiX size={30} color="#fff" /> : <FiMenu size={30} color="#fff" />}
@@ -143,10 +143,10 @@ function NavbarContent() {
                             <li><Link href="/ru/#faq" onClick={closeMenu}>FAQ</Link></li>
                         </ul>
                     </li>
-                    <li><Link href="/ru/#pricing-plan" onClick={closeMenu}>
+                    <li><Link href="/pricing-plan" onClick={closeMenu}>
                         <button className="navbar__button">ЗАКАЗАТЬ</button>
                     </Link></li>
-                    {/* <li><LanguageSwitcher /></li> */}
+                    <li><LanguageSwitcher /></li>
                 </ul>
             </div>
             

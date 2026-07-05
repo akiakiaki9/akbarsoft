@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { FaInstagram, FaTelegramPlane, FaGithub, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
-import { HiMiniArrowTopRightOnSquare } from "react-icons/hi2";
+import { FaInstagram, FaTelegramPlane, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
 import Link from 'next/link';
 
 export default function Footer() {

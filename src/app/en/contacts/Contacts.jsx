@@ -19,40 +19,72 @@ export default function Contacts() {
     });
     
     const [isLoading, setIsLoading] = useState(false);
+    const [formErrors, setFormErrors] = useState({});
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        if (formErrors[name]) {
+            setFormErrors({ ...formErrors, [name]: '' });
+        }
+    };
+
+    const validateForm = () => {
+        const errors = {};
+        
+        if (!formData.name.trim() || formData.name.length < 3) {
+            errors.name = 'Name must be at least 3 characters';
+        }
+        
+        if (!formData.phone.trim()) {
+            errors.phone = 'Enter phone number';
+        } else if (!/^[\+\d\s\(\)-]{9,}$/.test(formData.phone)) {
+            errors.phone = 'Enter a valid phone number';
+        }
+        
+        if (!formData.email.trim()) {
+            errors.email = 'Enter email';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            errors.email = 'Enter a valid email address';
+        }
+        
+        if (!formData.subject.trim() || formData.subject.length < 5) {
+            errors.subject = 'Subject must be at least 5 characters';
+        }
+        
+        if (!formData.message.trim() || formData.message.length < 10) {
+            errors.message = 'Message must be at least 10 characters';
+        }
+        
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        if (!validateForm()) {
+            return;
+        }
+        
         setIsLoading(true);
-
+        
         try {
-            console.log('Sending data to API...', formData);
-            
-            const response = await fetch('/api/contacts', {
+            const response = await fetch('/api/send-review', {
                 method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
 
-            console.log('Response status:', response.status);
-            
-            // Проверяем, вернулся ли JSON
             const contentType = response.headers.get('content-type');
             if (!contentType || !contentType.includes('application/json')) {
-                const text = await response.text();
-                console.error('Non-JSON response:', text.substring(0, 200));
                 throw new Error('Server returned non-JSON response');
             }
 
             const data = await response.json();
 
             if (response.ok) {
-                alert('✅ Message sent successfully!');
+                alert('✅ Message sent successfully! We will contact you shortly.');
                 setFormData({
                     theme: "CONTACTS (FOR FEEDBACK)",
                     name: '',
@@ -62,25 +94,26 @@ export default function Contacts() {
                     subject: '',
                     message: ''
                 });
+                setFormErrors({});
             } else {
-                alert(`❌ ${data.error || 'Failed to send message. Please try again.'}`);
+                alert(`❌ ${data.error || 'Failed to send message. Please try again later.'}`);
             }
         } catch (error) {
-            console.error('Form submission error:', error);
-            alert('❌ Failed to send message. Please try again later.');
+            console.error('Error sending message:', error);
+            alert('❌ An error occurred while sending. Please check your internet connection.');
         } finally {
             setIsLoading(false);
         }
     };
-
+    
     return (
         <div className='contacts'>
             <div className="main">
                 <div className="contacts-blok">
                     <div className="contacts-blok__section-1">
-                        <p className="contacts-blok__section-1__p-1">Get in touch</p>
-                        <h1 className='contacts-blok__section-1__h1-1'>Contact Information</h1>
-                        <p className="contacts-blok__section-1__p-2">Start a conversation to build a good relationship and business</p>
+                        <p className="contacts-blok__section-1__p-1">Contact us</p>
+                        <h1 className='contacts-blok__section-1__h1-1'>Contact information</h1>
+                        <p className="contacts-blok__section-1__p-2">Start communication to establish good relationships and business</p>
                         <div className="contacts-blok__section-1__container">
                             <div className="contacts-blok__section-1__container__section">
                                 <div className="contacts-blok__section-1__container__section-part">
@@ -91,7 +124,7 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            Main Office
+                                            Main office
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             Uzbekistan
@@ -109,7 +142,7 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            Our Email
+                                            Our email
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             akbarsoftfreelance@gmail.com
@@ -129,10 +162,7 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            Phone Number
-                                        </p>
-                                        <p className='contacts-blok__section-1__container__section__class__p-2'>
-                                            Phone : +998 88 558 93 00
+                                            Phone number
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             Fax : +998 50 095 33 31
@@ -147,7 +177,7 @@ export default function Contacts() {
                                     </div>
                                     <div className="contacts-blok__section-1__container__section__class">
                                         <p className='contacts-blok__section-1__container__section__class__p-1'>
-                                            Working Hours
+                                            Working hours
                                         </p>
                                         <p className='contacts-blok__section-1__container__section__class__p-2'>
                                             Monday - Saturday
@@ -162,10 +192,10 @@ export default function Contacts() {
                         <div className="contacts-blok__section-1__footer">
                             <h2>We are on social media</h2>
                             <div className="contacts-blok__section-1__footer__container">
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/by.tillayev/?utm_source=ig_web_button_share_sheet">
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://www.instagram.com/akbarsoft.uz/" target="_blank" rel="noopener noreferrer">
                                     <FaInstagram className='footer-blok__section-1__icon' />
                                 </a>
-                                <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft">
+                                <a className='contacts-blok__section-1__footer__container-a' href="https://t.me/akbar_soft" target="_blank" rel="noopener noreferrer">
                                     <FaTelegramPlane className='footer-blok__section-1__icon' />
                                 </a>
                             </div>
@@ -175,38 +205,98 @@ export default function Contacts() {
                         <form className='contacts-form' onSubmit={handleSubmit}>
                             <h1>Send us a message</h1>
                             <p>Please feel free to send us questions, feedback, or suggestions.</p>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Name</label>
-                                    <input minLength={3} type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
+                                    <label>Name *</label>
+                                    <input 
+                                        minLength={3} 
+                                        type="text" 
+                                        name="name" 
+                                        value={formData.name} 
+                                        onChange={handleChange} 
+                                        placeholder="Name" 
+                                        required 
+                                        className={formErrors.name ? 'error' : ''}
+                                    />
+                                    {formErrors.name && <span className="error-message">{formErrors.name}</span>}
                                 </div>
                                 <div className="contacts-form__section-part">
                                     <label>Company</label>
-                                    <input minLength={2} type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Company" required />
+                                    <input 
+                                        minLength={2} 
+                                        type="text" 
+                                        name="company" 
+                                        value={formData.company} 
+                                        onChange={handleChange} 
+                                        placeholder="Company" 
+                                    />
                                 </div>
                             </div>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Phone</label>
-                                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required />
+                                    <label>Phone *</label>
+                                    <input 
+                                        type="tel" 
+                                        name="phone" 
+                                        value={formData.phone} 
+                                        onChange={handleChange} 
+                                        placeholder="+998 XX XXX XX XX" 
+                                        required 
+                                        className={formErrors.phone ? 'error' : ''}
+                                    />
+                                    {formErrors.phone && <span className="error-message">{formErrors.phone}</span>}
                                 </div>
                                 <div className="contacts-form__section-part">
-                                    <label>Email</label>
-                                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
+                                    <label>Email *</label>
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        value={formData.email} 
+                                        onChange={handleChange} 
+                                        placeholder="example@mail.com" 
+                                        required 
+                                        className={formErrors.email ? 'error' : ''}
+                                    />
+                                    {formErrors.email && <span className="error-message">{formErrors.email}</span>}
                                 </div>
                             </div>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Subject</label>
-                                    <input minLength={5} type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subject" required />
+                                    <label>Subject *</label>
+                                    <input 
+                                        minLength={5} 
+                                        type="text" 
+                                        name="subject" 
+                                        value={formData.subject} 
+                                        onChange={handleChange} 
+                                        placeholder="Message subject" 
+                                        required 
+                                        className={formErrors.subject ? 'error' : ''}
+                                    />
+                                    {formErrors.subject && <span className="error-message">{formErrors.subject}</span>}
                                 </div>
                             </div>
+                            
                             <div className="contacts-form__section">
                                 <div className="contacts-form__section-part">
-                                    <label>Message</label>
-                                    <textarea minLength={10} name="message" value={formData.message} onChange={handleChange} placeholder="Message" required />
+                                    <label>Message *</label>
+                                    <textarea 
+                                        minLength={10} 
+                                        name="message" 
+                                        value={formData.message} 
+                                        onChange={handleChange} 
+                                        placeholder="Your message..." 
+                                        required 
+                                        rows={5}
+                                        className={formErrors.message ? 'error' : ''}
+                                    />
+                                    {formErrors.message && <span className="error-message">{formErrors.message}</span>}
                                 </div>
                             </div>
+                            
                             <button type='submit' disabled={isLoading}>
                                 {isLoading ? 'SENDING...' : 'SEND MESSAGE'}
                             </button>
@@ -215,5 +305,5 @@ export default function Contacts() {
                 </div>
             </div>
         </div>
-    );
+    )
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Русская версия -->
     <url>
-        <loc>https://akbarsoft.uz/ru</loc>
+        <loc>https://akbarsoft.uz/ru/</loc>
         <lastmod>2026-02-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -9,31 +10,35 @@
     <url>
         <loc>https://akbarsoft.uz/ru/contacts</loc>
         <lastmod>2026-02-25</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <!-- Узбекская версия -->
     <url>
-        <loc>https://akbarsoft.uz/en</loc>
+        <loc>https://akbarsoft.uz/uz/</loc>
         <lastmod>2026-02-25</lastmod>
         <changefreq>daily</changefreq>
-        <priority>8.0</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/en/contacts</loc>
-        <lastmod>2026-02-25</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://akbarsoft.uz/uz</loc>
-        <lastmod>2026-02-25</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>8.0</priority>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://akbarsoft.uz/uz/contacts</loc>
         <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Английская версия -->
+    <url>
+        <loc>https://akbarsoft.uz/en</loc>
+        <lastmod>2026-02-25</lastmod>
         <changefreq>daily</changefreq>
-        <priority>0.7</priority>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://akbarsoft.uz/en/contacts</loc>
+        <lastmod>2026-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

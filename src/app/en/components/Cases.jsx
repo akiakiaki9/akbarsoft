@@ -1,24 +1,44 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import CASES from '@/app/utils/cases'
 import Link from 'next/link'
 import { FiArrowRight, FiCalendar, FiMapPin, FiDollarSign, FiUser } from 'react-icons/fi'
 
 export default function Cases() {
     const [hoveredId, setHoveredId] = useState(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <div className='cases' id='cases'>
+        <div className='cases' id='cases' ref={sectionRef}>
             <div className="cases-header">
                 <span className="cases-header__badge">our projects</span>
-                <h1 className="cases-header__title">PROJECTS WE HAVE IMPLEMENTED</h1>
+                <h1 className="cases-header__title">PROJECTS WE HAVE COMPLETED</h1>
                 <p className="cases-header__description">
                     Explore our best projects and get detailed information about them
                 </p>
             </div>
 
             <div className="main">
-                <div className="cases-grid">
+                <div className={`cases-grid ${isVisible ? 'visible' : ''}`}>
                     {CASES.map((item, index) => (
                         <div
                             className="cases-card"
@@ -74,7 +94,7 @@ export default function Cases() {
                                 <p className="cases-card__description">{item.subtitle}</p>
 
                                 <Link href={item.link} className="cases-card__link">
-                                    <span>View details</span>
+                                    <span>Learn More</span>
                                     <FiArrowRight className="cases-card__link-icon" />
                                 </Link>
                             </div>
