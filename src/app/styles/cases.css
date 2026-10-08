@@ -1,3 +1,7 @@
+/* ============================================================
+   СЕКЦИЯ CASES — список проектов на главной
+   ============================================================ */
+
 .cases {
     padding: 80px 0;
     background: linear-gradient(180deg, var(--bg-color) 0%, #1a1035 100%);
@@ -6,7 +10,7 @@
     overflow: hidden;
 }
 
-/* Декоративные элементы фона */
+/* Декоративная линия сверху */
 .cases::before {
     content: '';
     position: absolute;
@@ -17,6 +21,7 @@
     background: linear-gradient(90deg, transparent, var(--purple-color), var(--violet-color), transparent);
 }
 
+/* Декоративное свечение */
 .cases::after {
     content: '';
     position: absolute;
@@ -28,12 +33,16 @@
     pointer-events: none;
 }
 
-/* Header секция */
+/* ============================================================
+   HEADER СЕКЦИИ
+   ============================================================ */
 .cases-header {
     text-align: center;
     padding: 20px 20px 60px;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .cases-header__badge {
@@ -81,7 +90,9 @@
     font-family: var(--p-ff);
 }
 
-/* Сетка проектов */
+/* ============================================================
+   СЕТКА ПРОЕКТОВ
+   ============================================================ */
 .cases-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -90,6 +101,8 @@
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .cases-grid.visible {
@@ -97,16 +110,21 @@
     transform: translateY(0);
 }
 
-/* Карточка проекта */
+/* ============================================================
+   КАРТОЧКА ПРОЕКТА
+   ============================================================ */
 .cases-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border-light-color);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 @keyframes fadeInUp {
@@ -114,6 +132,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -126,11 +145,11 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(180, 124, 253, 0.2);
 }
 
-/* Обертка изображения */
+/* Обёртка изображения */
 .cases-card__image-wrapper {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
 }
 
 .cases-card__image {
@@ -138,6 +157,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
+    display: block;
 }
 
 .cases-card:hover .cases-card__image {
@@ -183,54 +203,63 @@
 /* Контент карточки */
 .cases-card__content {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-/* Статистика в сетке 2x2 */
+/* Статистика — 3 колонки */
 .cases-card__stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--border-light-color);
 }
 
 .cases-card__stat {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    min-width: 0;
 }
 
 .cases-card__stat-icon {
     font-size: 18px;
     color: var(--violet-color);
     min-width: 18px;
+    flex-shrink: 0;
 }
 
 .cases-card__stat div {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .cases-card__stat-label {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-color);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .cases-card__stat-value {
-    font-size: 14px;
+    font-size: 13px;
     color: #fff;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Описание проекта */
+/* Описание */
 .cases-card__description {
     font-size: 14px;
     line-height: 1.6;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -253,6 +282,7 @@
     transition: all 0.3s ease;
     width: fit-content;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
 }
 
 .cases-card__link:hover {
@@ -269,7 +299,9 @@
     transform: translateX(5px);
 }
 
-/* ========== АДАПТИВНОСТЬ ========== */
+/* ============================================================
+   АДАПТИВ
+   ============================================================ */
 @media (max-width: 1200px) {
     .cases-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -301,46 +333,67 @@
 
     .cases-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
+    }
+
+    /* Компактная карточка на мобилке */
+    .cases-card__image-wrapper {
+        aspect-ratio: 16 / 10;
     }
 
     .cases-card__overlay {
         transform: translateY(0);
         background: linear-gradient(to top, rgba(10, 1, 24, 0.98), rgba(10, 1, 24, 0.8));
+        padding: 20px 16px 14px;
     }
 
     .cases-card__category {
         font-size: 10px;
+        padding: 3px 10px;
+        margin-bottom: 6px;
     }
 
     .cases-card__title {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .cases-card__content {
-        padding: 20px;
+        padding: 14px 16px 18px;
     }
 
     .cases-card__stats {
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+
+    .cases-card__stat {
+        gap: 6px;
     }
 
     .cases-card__stat-icon {
-        font-size: 16px;
+        font-size: 14px;
+        min-width: 14px;
+    }
+
+    .cases-card__stat-label {
+        font-size: 9px;
     }
 
     .cases-card__stat-value {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .cases-card__description {
-        font-size: 13px;
-        margin-bottom: 16px;
+        font-size: 12.5px;
+        margin-bottom: 12px;
+        -webkit-line-clamp: 2;
     }
 
     .cases-card__link {
-        padding: 8px 20px;
-        font-size: 13px;
+        padding: 8px 18px;
+        font-size: 12.5px;
     }
 }
 
@@ -349,44 +402,56 @@
     .cases-header__title {
         font-size: 36px;
     }
-    
+
     .cases-card__title {
         font-size: 18px;
     }
-    
+
     .cases-card__content {
         padding: 20px;
     }
-}
-
-/* Для очень маленьких экранов */
-@media (max-width: 480px) {
-    .cases-header__title {
-        font-size: 24px;
-    }
-
-    .cases-header__description {
-        font-size: 14px;
-    }
 
     .cases-card__stats {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .cases-card__stat {
-        justify-content: space-between;
-    }
-
-    .cases-card__stat div {
-        flex-direction: row;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 }
 
-/* Для устройств с reduced motion */
+/* Очень узкие экраны */
+@media (max-width: 480px) {
+    .cases-header__title {
+        font-size: 22px;
+    }
+
+    .cases-header__description {
+        font-size: 13px;
+    }
+
+    .cases-card__stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .cases-card__stat {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .cases-card__stat div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .cases-card__stat-value {
+        font-size: 10.5px;
+    }
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
     .cases-card,
     .cases-card__image,
     .cases-card__overlay,
@@ -396,36 +461,13 @@
         animation: none;
         transform: none;
     }
-    
+
     .cases-card {
         opacity: 1;
     }
-    
+
     .cases-grid {
         opacity: 1;
         transform: none;
-    }
-}
-
-/* Скелетон загрузки */
-.cases-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px;
-}
-
-.cases-loading__spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid var(--border-light-color);
-    border-top-color: var(--violet-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
     }
 }

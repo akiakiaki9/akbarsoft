@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <Cases />
       <RequestForm />
-      <Carousel />
+      {/* <Carousel /> */}
       <Faq />
       <Footer />
     </div>

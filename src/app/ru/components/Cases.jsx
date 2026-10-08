@@ -2,12 +2,16 @@
 import React, { useState, useEffect, useRef } from 'react'
 import CASES from '@/app/utils/cases'
 import Link from 'next/link'
-import { FiArrowRight, FiCalendar, FiMapPin, FiDollarSign, FiUser } from 'react-icons/fi'
+import { FiArrowRight, FiCalendar, FiMapPin, FiUser } from 'react-icons/fi'
+import '@/app/styles/cases.css'
 
 export default function Cases() {
     const [hoveredId, setHoveredId] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+
+    // Сортируем: сначала последние id, потом старые
+    const sortedCases = [...CASES].sort((a, b) => b.id - a.id);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -20,10 +24,7 @@ export default function Cases() {
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => observer.disconnect();
     }, []);
 
@@ -39,7 +40,7 @@ export default function Cases() {
 
             <div className="main">
                 <div className={`cases-grid ${isVisible ? 'visible' : ''}`}>
-                    {CASES.map((item, index) => (
+                    {sortedCases.map((item, index) => (
                         <div
                             className="cases-card"
                             key={item.id}
@@ -82,18 +83,14 @@ export default function Cases() {
                                             <span className="cases-card__stat-value">{item.location}</span>
                                         </div>
                                     </div>
-                                    <div className="cases-card__stat">
-                                        <FiDollarSign className="cases-card__stat-icon" />
-                                        <div>
-                                            <span className="cases-card__stat-label">Бюджет</span>
-                                            <span className="cases-card__stat-value">{item.budget}</span>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <p className="cases-card__description">{item.subtitle}</p>
 
-                                <Link href={item.link} className="cases-card__link">
+                                <Link
+                                    href={`/ru/case/${item.slug}`}
+                                    className="cases-card__link"
+                                >
                                     <span>Подробнее</span>
                                     <FiArrowRight className="cases-card__link-icon" />
                                 </Link>

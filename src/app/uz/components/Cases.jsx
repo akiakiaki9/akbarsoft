@@ -2,12 +2,16 @@
 import React, { useState, useEffect, useRef } from 'react'
 import CASES from '@/app/utils/cases'
 import Link from 'next/link'
-import { FiArrowRight, FiCalendar, FiMapPin, FiDollarSign, FiUser } from 'react-icons/fi'
+import { FiArrowRight, FiCalendar, FiMapPin, FiUser } from 'react-icons/fi'
+import '@/app/styles/cases.css'
 
 export default function Cases() {
     const [hoveredId, setHoveredId] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+
+    // Saralash: oxirgi id birinchi
+    const sortedCases = [...CASES].sort((a, b) => b.id - a.id);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -20,10 +24,7 @@ export default function Cases() {
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => observer.disconnect();
     }, []);
 
@@ -31,15 +32,15 @@ export default function Cases() {
         <div className='cases' id='cases' ref={sectionRef}>
             <div className="cases-header">
                 <span className="cases-header__badge">bizning loyihalar</span>
-                <h1 className="cases-header__title">BIZ TOMONIDAN AMALGA OSHIRILGAN LOYIHALAR</h1>
+                <h1 className="cases-header__title">BIZ AMALGA OSHIRGAN LOYIHALAR</h1>
                 <p className="cases-header__description">
-                    Eng yaxshi loyihalarimiz bilan tanishing va ular haqida batafsil ma'lumot oling
+                    Eng yaxshi loyihalarimiz bilan tanishing va ular haqida batafsil ma’lumot oling
                 </p>
             </div>
 
             <div className="main">
                 <div className={`cases-grid ${isVisible ? 'visible' : ''}`}>
-                    {CASES.map((item, index) => (
+                    {sortedCases.map((item, index) => (
                         <div
                             className="cases-card"
                             key={item.id}
@@ -78,22 +79,18 @@ export default function Cases() {
                                     <div className="cases-card__stat">
                                         <FiMapPin className="cases-card__stat-icon" />
                                         <div>
-                                            <span className="cases-card__stat-label">Joylashuv</span>
+                                            <span className="cases-card__stat-label">Manzil</span>
                                             <span className="cases-card__stat-value">{item.location}</span>
-                                        </div>
-                                    </div>
-                                    <div className="cases-card__stat">
-                                        <FiDollarSign className="cases-card__stat-icon" />
-                                        <div>
-                                            <span className="cases-card__stat-label">Byudjet</span>
-                                            <span className="cases-card__stat-value">{item.budget}</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <p className="cases-card__description">{item.subtitle}</p>
 
-                                <Link href={item.link} className="cases-card__link">
+                                <Link
+                                    href={`/uz/case/${item.slug}`}
+                                    className="cases-card__link"
+                                >
                                     <span>Batafsil</span>
                                     <FiArrowRight className="cases-card__link-icon" />
                                 </Link>
